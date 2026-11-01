@@ -1,0 +1,21 @@
+{
+  "engine": "REAPER 7.84/linux-x86_64",
+  "native": [
+    {"width": 960, "scenarios": 210, "assertions": 14070, "failures": 0, "legacy_fallback_events": 0},
+    {"width": 640, "scenarios": 100, "assertions": 5776, "failures": 0, "legacy_fallback_events": 4},
+    {"width": 320, "scenarios": 100, "assertions": 2722, "failures": 0, "legacy_fallback_events": 20}
+  ],
+  "total_scenarios": 410,
+  "total_assertions": 22568,
+  "contract_tests": 10,
+  "original_assets_unchanged": 2892,
+  "adjuster_gui": "Standard action 42234 + actual mouse checkbox + fresh-process persistence passed",
+  "windows_runtime_tested": false,
+  "theme_sha256": "64f8c50d856966c3bd1d50517771328fc3395398e0f5cc837b7ad2a4a1a11f54",
+  "sources_sha256": {
+    "build.py": "4afbaafe854a5033338fba29612b2a8d22cb5be2d0dbc77ab1f3f7457fa3d015",
+    "src/reaskii.walter": "4dd37a99c8cb361eeb04d2e5e81851c6644c9138f0df738e8ad5d4293bf39e95",
+    "tests/native.lua": "55fd558aa05a680d6d20d98838ecbafc7b240ce20ab2f10317b737b35dce5f81",
+    "scripts/ReaSkii_Adjuster.lua": "9ec172f7ed6740ff8acb34a300dadee34d2f8eb7bbfc466999fd140f2d7255ad"
+  }
+}

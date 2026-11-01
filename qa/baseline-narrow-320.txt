@@ -1,0 +1,8 @@
+layout 150%_A
+tcp.size 82 184 320 150
+tcp.label 123 235 0 0
+tcp.recarm 123 195 30 30
+layout 200%_B
+tcp.size 82 184 320 200
+tcp.label 136 252 0 0
+tcp.recarm 136 198 40 40

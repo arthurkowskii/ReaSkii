@@ -1,0 +1,32 @@
+name: Theme checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build reproducible theme
+        run: python3 build.py
+      - name: Check committed generated theme
+        run: git diff --exit-code -- theme
+      - name: Parse Windows installer
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $errors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile((Join-Path $PWD 'Install-ReaSkii.ps1'), [ref]$tokens, [ref]$errors) | Out-Null
+          if ($errors.Count) { throw ($errors | Out-String) }
+      - name: Contract and upstream asset checks
+        run: python3 -m unittest discover -s tests -v
+      - name: Check build reproducibility
+        run: |
+          python3 -c "import hashlib,pathlib; p=pathlib.Path('dist/ReaSkii.ReaperThemeZip'); pathlib.Path('dist/first.sha256').write_text(hashlib.sha256(p.read_bytes()).hexdigest())"
+          python3 build.py
+          python3 -c "import hashlib,pathlib; p=pathlib.Path('dist/ReaSkii.ReaperThemeZip'); assert hashlib.sha256(p.read_bytes()).hexdigest()==pathlib.Path('dist/first.sha256').read_text()"

@@ -1,0 +1,5 @@
+local root = reaper.GetExePath()
+local f=assert(io.open(root..'/probe.txt','w'))
+f:write('exe='..root..'\nresource='..reaper.GetResourcePath()..'\nversion='..reaper.GetAppVersion()..'\n')
+f:close()
+reaper.defer(function() end)

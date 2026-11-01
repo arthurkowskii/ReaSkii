@@ -1,0 +1,19 @@
+*** This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License under the following terms ***
+
+
+Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+NonCommercial — You may not use the material for commercial purposes.
+
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+
+__________________________________________________________________________
+
+Note : You can use this Theme to create derivative work (and I encourage you to do so) as long as it's not monetized and as long as you give appropriate credit. Same license shall apply to whatever you'll cook using reARK materials/Template.
+
+For small modifications or any changes that build upon reARK Theme such as :
+New layouts, toolbars, fixes, etc.. I urge you to contact me to see if I can get your work included in reARK's bundle and credit you. You can also post it in the comments of the main thread for the theme on the Reaper Forums.
+If you did not get an answer from me and/or believe it warrants its own thread, you can make one as long as you specify it's a reARK Mod / reARK Fork. 
+
+ 
+(I'll add more informations related to the Template and derivative work from it once it's released as well)

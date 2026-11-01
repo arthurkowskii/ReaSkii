@@ -1,0 +1,10 @@
+dist/
+__pycache__/
+*.pyc
+.venv/
+# Never commit REAPER executables, user settings or license keys.
+reaper-license.rk
+reaper-reginfo*.ini
+reaper.ini
+reaper-themeconfig.ini
+*.dmp

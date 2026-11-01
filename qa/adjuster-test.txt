@@ -1,0 +1,2 @@
+PASS: standard action opened own adjuster; real checkbox click changed full-row to 0
+PASS: persistence restored full-row=0 in a fresh process
