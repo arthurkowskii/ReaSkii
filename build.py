@@ -98,10 +98,10 @@ def build():
         'README.md': (ROOT / 'README.md').read_bytes(),
         'THIRD_PARTY_NOTICES.md': (ROOT / 'THIRD_PARTY_NOTICES.md').read_bytes(),
     }
-    manifest = {'version': '0.1.0', 'sha256': {
+    manifest = {'version': '0.1.1', 'sha256': {
         name: hashlib.sha256(data).hexdigest() for name, data in payload.items()}}
     payload['manifest.json'] = (json.dumps(manifest, indent=2, sort_keys=True) + '\n').encode()
-    with zipfile.ZipFile(ROOT / 'dist/ReaSkii-v0.1.0.zip', 'w') as archive:
+    with zipfile.ZipFile(ROOT / 'dist/ReaSkii-v0.1.1.zip', 'w') as archive:
         for name, data in sorted(payload.items()):
             info = zipfile.ZipInfo(name, (2026, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED

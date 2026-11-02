@@ -60,6 +60,14 @@ macro reaskiiTcpFlow
     set any_row_r 0
     set first_row_r 0
     reaskiiFirstRow
+    ; Two 20px rows must fit ordinary 50-60px tracks. Reduce vertical margins
+    ; only when full-row mode is active; keep original spacing at normal height.
+    set compactMin + * scale 43 1
+    set compactPad / - - h 1 * 2 element_h{0} 3
+    set compactPad compactPad{0}>tcp_padding{1} tcp_padding{1} compactPad
+    set compactPad compactPad{0}<scale scale compactPad
+    set tcp_padding ?nameFullRow h>=compactMin{0} [tcp_padding{0} compactPad{0}]
+    set previous_element ?nameFullRow + [main_sec] + [tcp_padding tcp_padding] * scale [0 0 0 20]
     then tcp.recarm 20 0 0 0 0
     then tcp.recmon 15 0 0 hide_folder_recmon 0
     then tcp.label tcp_LabelSize 0 0 0 0

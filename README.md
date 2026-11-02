@@ -31,9 +31,15 @@ Choisir ensuite **Options > Themes > ReaSkii**. Les nouvelles options sont dans 
 
 Installation manuelle : copier les deux fichiers aux emplacements ci-dessus. Pour revenir en arrière, sélectionner le thème reARK X original. Aucun redémarrage n'est normalement nécessaire pour changer de thème.
 
+### Mise à jour 0.1.0 vers 0.1.1
+
+L'ajusteur est inchangé. Sauvegarder le précédent `ColorThemes/ReaSkii.ReaperThemeZip` hors du dossier ColorThemes, puis le remplacer par celui du nouveau paquet. Recharger ReaSkii en sélectionnant temporairement reARK X puis ReaSkii. Les paramètres existants restent conservés. L'installeur de première installation refuse volontairement d'écraser l'ancienne version.
+
+Pour la disposition de la capture Reapertips avec les deux boutons rotatifs à droite du nom, activer **...but keep volume** et **...but keep pan**. La visibilité générale des contrôles reste réglée par l'ajusteur reARK X/V6 : les « keep » changent la rangée, pas les règles de masquage.
+
 ## Comportements à connaître
 
-- Une piste trop basse ne peut pas afficher une seconde rangée : les contrôles non conservés sont alors masqués, pas superposés au nom. Augmenter sa hauteur ou activer les options « ...but keep ».
+- Depuis 0.1.1, les marges verticales se réduisent en mode pleine ligne pour préserver deux rangées dans les pistes de 50 à 60 pixels à 100 % (hauteurs proportionnelles en HiDPI). À hauteur minimale, une seule rangée reste physiquement possible et les contrôles non conservés sont masqués.
 - Un panneau extrêmement étroit, notamment avec les très grands mètres du layout C à 200 %, conserve le repli vertical de reARK X. « Pleine ligne » signifie la largeur disponible pour les contrôles, pas la zone réservée aux mètres, aux dossiers ou à une colonne FX latérale.
 - Désactiver la nouvelle option rétablit le flux de placement de reARK X. Certains anciens cas de nom masqué dans des panneaux étroits restent caractérisés dans les tests ; ils ne sont pas introduits par le mode pleine ligne.
 - Le réglage d'indentation de base de reARK X reste appliqué. Un indent de base nul annule l'indentation, même avec Smart folder indent activé.
@@ -47,7 +53,7 @@ python3 build.py
 python3 -m unittest discover -s tests -v
 ```
 
-Le build produit `dist/ReaSkii.ReaperThemeZip` et le paquet autonome `dist/ReaSkii-v0.1.0.zip` (thème, ajusteur, installeur, documentation et manifeste SHA-256).
+Le build produit `dist/ReaSkii.ReaperThemeZip` et le paquet autonome `dist/ReaSkii-v0.1.1.zip` (thème, ajusteur, installeur, documentation et manifeste SHA-256).
 
 Le ZIP de thème est reproductible. `upstream/` conserve les règles et couleurs originales ; `src/reaskii.walter` contient les ajouts ; `build.py` applique les adaptations ciblées aux trois panneaux. Les assets sont conservés sous `theme/ReaSkii/` et vérifiés par hash.
 
@@ -56,6 +62,7 @@ Les tests natifs nécessitent une installation REAPER de test externe au dépôt
 ```sh
 xvfb-run -a -s '-screen 0 1800x1200x24' python3 tests/run_native.py --reaper-dir /chemin/reaskii-native/REAPER --width 960
 xvfb-run -a -s '-screen 0 1800x1200x24' python3 tests/run_native.py --reaper-dir /chemin/reaskii-native/REAPER --width 640
+xvfb-run -a -s '-screen 0 1800x1200x24' python3 tests/run_native.py --reaper-dir /chemin/reaskii-native/REAPER --width 540
 xvfb-run -a -s '-screen 0 1800x1200x24' python3 tests/run_native.py --reaper-dir /chemin/reaskii-native/REAPER --width 320
 ```
 

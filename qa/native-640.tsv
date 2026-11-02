@@ -3027,12 +3027,79 @@ PASS	w640 150%_A mask0 h37.5 pan5 full1 name inside TCP	175 195 426 30
 PASS	w640 150%_A mask0 h37.5 pan5 full1 no overlap tcp.recmon / tcp.recarm	153 195 23 30 | 123 195 30 30
 PASS	w640 150%_A mask0 h37.5 pan5 full1 no overlap tcp.label / tcp.recarm	175 195 426 30 | 123 195 30 30
 PASS	w640 150%_A mask0 h37.5 pan5 full1 no overlap tcp.label / tcp.recmon	175 195 426 30 | 153 195 23 30
-CASE	w640 150%_A mask0 h75.0 pan5 full1	82 184 640 75	175 195 426 30
-PASS	w640 150%_A mask0 h75.0 pan5 full1 expected name visibility	175 195 426 30
-PASS	w640 150%_A mask0 h75.0 pan5 full1 name inside TCP	175 195 426 30
-PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	153 195 23 30 | 123 195 30 30
-PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recarm	175 195 426 30 | 123 195 30 30
-PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recmon	175 195 426 30 | 153 195 23 30
+CASE	w640 150%_A mask0 h75.0 pan5 full1	82 184 640 75	175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 expected name visibility	175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 name inside TCP	175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 late tcp.volume below name	123 223 30 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 late tcp.pan below name	163 223 30 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 late tcp.infoblock below name	238 223 66 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 late tcp.io below name	315 223 51 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	153 189 23 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recarm	175 189 426 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recmon	175 189 426 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.volume / tcp.recarm	123 223 30 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.volume / tcp.recmon	123 223 30 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.volume / tcp.label	123 223 30 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.recarm	163 223 30 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.recmon	163 223 30 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.label	163 223 30 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.volume	163 223 30 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.recarm	198 223 30 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.recmon	198 223 30 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.label	198 223 30 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.volume	198 223 30 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.pan	198 223 30 30 | 163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.recarm	315 223 51 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.recmon	315 223 51 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.label	315 223 51 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.volume	315 223 51 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.pan	315 223 51 30 | 163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.width	315 223 51 30 | 198 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.recarm	376 223 30 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.recmon	376 223 30 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.label	376 223 30 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.volume	376 223 30 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.pan	376 223 30 30 | 163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.width	376 223 30 30 | 198 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.io	376 223 30 30 | 315 223 51 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.recarm	406 223 24 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.recmon	406 223 24 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.label	406 223 24 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.volume	406 223 24 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.pan	406 223 24 30 | 163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.width	406 223 24 30 | 198 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.io	406 223 24 30 | 315 223 51 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.fx	406 223 24 30 | 376 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.env / tcp.recarm	441 223 62 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.env / tcp.recmon	441 223 62 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.env / tcp.label	441 223 62 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.env / tcp.volume	441 223 62 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.env / tcp.pan	441 223 62 30 | 163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.env / tcp.width	441 223 62 30 | 198 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.env / tcp.io	441 223 62 30 | 315 223 51 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.env / tcp.fx	441 223 62 30 | 376 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.env / tcp.fxbyp	441 223 62 30 | 406 223 24 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmode / tcp.recarm	513 223 59 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmode / tcp.recmon	513 223 59 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmode / tcp.label	513 223 59 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmode / tcp.volume	513 223 59 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmode / tcp.pan	513 223 59 30 | 163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmode / tcp.width	513 223 59 30 | 198 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmode / tcp.io	513 223 59 30 | 315 223 51 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmode / tcp.fx	513 223 59 30 | 376 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmode / tcp.fxbyp	513 223 59 30 | 406 223 24 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.recmode / tcp.env	513 223 59 30 | 441 223 62 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.recarm	238 223 66 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.recmon	238 223 66 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.label	238 223 66 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.volume	238 223 66 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.pan	238 223 66 30 | 163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.width	238 223 66 30 | 198 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.io	238 223 66 30 | 315 223 51 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.fx	238 223 66 30 | 376 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.fxbyp	238 223 66 30 | 406 223 24 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.env	238 223 66 30 | 441 223 62 30
+PASS	w640 150%_A mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.recmode	238 223 66 30 | 513 223 59 30
 CASE	w640 150%_A mask0 h225.0 pan5 full1	82 184 640 225	175 195 451 30
 PASS	w640 150%_A mask0 h225.0 pan5 full1 expected name visibility	175 195 451 30
 PASS	w640 150%_A mask0 h225.0 pan5 full1 name inside TCP	175 195 451 30
@@ -3667,12 +3734,58 @@ PASS	w640 150%_B mask0 h37.5 pan5 full1 name inside TCP	175 195 426 30
 PASS	w640 150%_B mask0 h37.5 pan5 full1 no overlap tcp.recmon / tcp.recarm	153 195 23 30 | 123 195 30 30
 PASS	w640 150%_B mask0 h37.5 pan5 full1 no overlap tcp.label / tcp.recarm	175 195 426 30 | 123 195 30 30
 PASS	w640 150%_B mask0 h37.5 pan5 full1 no overlap tcp.label / tcp.recmon	175 195 426 30 | 153 195 23 30
-CASE	w640 150%_B mask0 h75.0 pan5 full1	82 184 640 75	175 195 426 30
-PASS	w640 150%_B mask0 h75.0 pan5 full1 expected name visibility	175 195 426 30
-PASS	w640 150%_B mask0 h75.0 pan5 full1 name inside TCP	175 195 426 30
-PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	153 195 23 30 | 123 195 30 30
-PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recarm	175 195 426 30 | 123 195 30 30
-PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recmon	175 195 426 30 | 153 195 23 30
+CASE	w640 150%_B mask0 h75.0 pan5 full1	82 184 640 75	175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 expected name visibility	175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 name inside TCP	175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 late tcp.volume below name	123 223 195 30 | 175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 late tcp.pan below name	328 223 30 30 | 175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 late tcp.infoblock below name	403 223 66 30 | 175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 late tcp.io below name	480 223 51 30 | 175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	153 189 23 30 | 123 189 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recarm	175 189 426 30 | 123 189 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recmon	175 189 426 30 | 153 189 23 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.volume / tcp.recarm	123 223 195 30 | 123 189 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.volume / tcp.recmon	123 223 195 30 | 153 189 23 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.volume / tcp.label	123 223 195 30 | 175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.recarm	328 223 30 30 | 123 189 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.recmon	328 223 30 30 | 153 189 23 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.label	328 223 30 30 | 175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.volume	328 223 30 30 | 123 223 195 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.recarm	363 223 30 30 | 123 189 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.recmon	363 223 30 30 | 153 189 23 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.label	363 223 30 30 | 175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.volume	363 223 30 30 | 123 223 195 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.pan	363 223 30 30 | 328 223 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.recarm	480 223 51 30 | 123 189 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.recmon	480 223 51 30 | 153 189 23 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.label	480 223 51 30 | 175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.volume	480 223 51 30 | 123 223 195 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.pan	480 223 51 30 | 328 223 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.width	480 223 51 30 | 363 223 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.recarm	541 223 30 30 | 123 189 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.recmon	541 223 30 30 | 153 189 23 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.label	541 223 30 30 | 175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.volume	541 223 30 30 | 123 223 195 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.pan	541 223 30 30 | 328 223 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.width	541 223 30 30 | 363 223 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fx / tcp.io	541 223 30 30 | 480 223 51 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.recarm	571 223 24 30 | 123 189 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.recmon	571 223 24 30 | 153 189 23 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.label	571 223 24 30 | 175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.volume	571 223 24 30 | 123 223 195 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.pan	571 223 24 30 | 328 223 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.width	571 223 24 30 | 363 223 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.io	571 223 24 30 | 480 223 51 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.fxbyp / tcp.fx	571 223 24 30 | 541 223 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.recarm	403 223 66 30 | 123 189 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.recmon	403 223 66 30 | 153 189 23 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.label	403 223 66 30 | 175 189 426 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.volume	403 223 66 30 | 123 223 195 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.pan	403 223 66 30 | 328 223 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.width	403 223 66 30 | 363 223 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.io	403 223 66 30 | 480 223 51 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.fx	403 223 66 30 | 541 223 30 30
+PASS	w640 150%_B mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.fxbyp	403 223 66 30 | 571 223 24 30
 CASE	w640 150%_B mask0 h225.0 pan5 full1	82 184 640 225	175 195 451 30
 PASS	w640 150%_B mask0 h225.0 pan5 full1 expected name visibility	175 195 451 30
 PASS	w640 150%_B mask0 h225.0 pan5 full1 name inside TCP	175 195 451 30
@@ -4292,12 +4405,41 @@ PASS	w640 150%_C mask0 h37.5 pan5 full1 name inside TCP	493 195 217 30
 PASS	w640 150%_C mask0 h37.5 pan5 full1 no overlap tcp.recmon / tcp.recarm	471 195 23 30 | 441 195 30 30
 PASS	w640 150%_C mask0 h37.5 pan5 full1 no overlap tcp.label / tcp.recarm	493 195 217 30 | 441 195 30 30
 PASS	w640 150%_C mask0 h37.5 pan5 full1 no overlap tcp.label / tcp.recmon	493 195 217 30 | 471 195 23 30
-CASE	w640 150%_C mask0 h75.0 pan5 full1	82 184 640 75	493 195 217 30
-PASS	w640 150%_C mask0 h75.0 pan5 full1 expected name visibility	493 195 217 30
-PASS	w640 150%_C mask0 h75.0 pan5 full1 name inside TCP	493 195 217 30
-PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	471 195 23 30 | 441 195 30 30
-PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recarm	493 195 217 30 | 441 195 30 30
-PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recmon	493 195 217 30 | 471 195 23 30
+CASE	w640 150%_C mask0 h75.0 pan5 full1	82 184 640 75	493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 expected name visibility	493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 name inside TCP	493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 late tcp.volume below name	441 223 30 30 | 493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 late tcp.pan below name	481 223 30 30 | 493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 late tcp.infoblock below name	556 223 66 30 | 493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 late tcp.io below name	633 223 51 30 | 493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	471 189 23 30 | 441 189 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recarm	493 189 217 30 | 441 189 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.label / tcp.recmon	493 189 217 30 | 471 189 23 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.volume / tcp.recarm	441 223 30 30 | 441 189 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.volume / tcp.recmon	441 223 30 30 | 471 189 23 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.volume / tcp.label	441 223 30 30 | 493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.recarm	481 223 30 30 | 441 189 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.recmon	481 223 30 30 | 471 189 23 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.label	481 223 30 30 | 493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.pan / tcp.volume	481 223 30 30 | 441 223 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.recarm	516 223 30 30 | 441 189 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.recmon	516 223 30 30 | 471 189 23 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.label	516 223 30 30 | 493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.volume	516 223 30 30 | 441 223 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.width / tcp.pan	516 223 30 30 | 481 223 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.recarm	633 223 51 30 | 441 189 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.recmon	633 223 51 30 | 471 189 23 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.label	633 223 51 30 | 493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.volume	633 223 51 30 | 441 223 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.pan	633 223 51 30 | 481 223 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.io / tcp.width	633 223 51 30 | 516 223 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.recarm	556 223 66 30 | 441 189 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.recmon	556 223 66 30 | 471 189 23 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.label	556 223 66 30 | 493 189 217 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.volume	556 223 66 30 | 441 223 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.pan	556 223 66 30 | 481 223 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.width	556 223 66 30 | 516 223 30 30
+PASS	w640 150%_C mask0 h75.0 pan5 full1 no overlap tcp.infoblock / tcp.io	556 223 66 30 | 633 223 51 30
 CASE	w640 150%_C mask0 h225.0 pan5 full1	82 184 640 225	493 195 217 30
 PASS	w640 150%_C mask0 h225.0 pan5 full1 expected name visibility	493 195 217 30
 PASS	w640 150%_C mask0 h225.0 pan5 full1 name inside TCP	493 195 217 30
@@ -4786,12 +4928,58 @@ PASS	w640 200%_A mask0 h50.0 pan5 full1 name inside TCP	206 196 354 40
 PASS	w640 200%_A mask0 h50.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	176 196 30 40 | 136 196 40 40
 PASS	w640 200%_A mask0 h50.0 pan5 full1 no overlap tcp.label / tcp.recarm	206 196 354 40 | 136 196 40 40
 PASS	w640 200%_A mask0 h50.0 pan5 full1 no overlap tcp.label / tcp.recmon	206 196 354 40 | 176 196 30 40
-CASE	w640 200%_A mask0 h100.0 pan5 full1	82 184 640 100	206 198 354 40
-PASS	w640 200%_A mask0 h100.0 pan5 full1 expected name visibility	206 198 354 40
-PASS	w640 200%_A mask0 h100.0 pan5 full1 name inside TCP	206 198 354 40
-PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	176 198 30 40 | 136 198 40 40
-PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.label / tcp.recarm	206 198 354 40 | 136 198 40 40
-PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.label / tcp.recmon	206 198 354 40 | 176 198 30 40
+CASE	w640 200%_A mask0 h100.0 pan5 full1	82 184 640 100	206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 expected name visibility	206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 name inside TCP	206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 late tcp.volume below name	136 237 40 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 late tcp.pan below name	190 237 40 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 late tcp.infoblock below name	290 237 88 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 late tcp.io below name	392 237 68 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	176 190 30 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.label / tcp.recarm	206 190 354 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.label / tcp.recmon	206 190 354 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.volume / tcp.recarm	136 237 40 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.volume / tcp.recmon	136 237 40 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.volume / tcp.label	136 237 40 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.pan / tcp.recarm	190 237 40 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.pan / tcp.recmon	190 237 40 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.pan / tcp.label	190 237 40 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.pan / tcp.volume	190 237 40 40 | 136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.width / tcp.recarm	236 237 40 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.width / tcp.recmon	236 237 40 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.width / tcp.label	236 237 40 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.width / tcp.volume	236 237 40 40 | 136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.width / tcp.pan	236 237 40 40 | 190 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.io / tcp.recarm	392 237 68 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.io / tcp.recmon	392 237 68 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.io / tcp.label	392 237 68 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.io / tcp.volume	392 237 68 40 | 136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.io / tcp.pan	392 237 68 40 | 190 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.io / tcp.width	392 237 68 40 | 236 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fx / tcp.recarm	474 237 40 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fx / tcp.recmon	474 237 40 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fx / tcp.label	474 237 40 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fx / tcp.volume	474 237 40 40 | 136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fx / tcp.pan	474 237 40 40 | 190 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fx / tcp.width	474 237 40 40 | 236 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fx / tcp.io	474 237 40 40 | 392 237 68 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fxbyp / tcp.recarm	514 237 32 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fxbyp / tcp.recmon	514 237 32 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fxbyp / tcp.label	514 237 32 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fxbyp / tcp.volume	514 237 32 40 | 136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fxbyp / tcp.pan	514 237 32 40 | 190 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fxbyp / tcp.width	514 237 32 40 | 236 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fxbyp / tcp.io	514 237 32 40 | 392 237 68 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.fxbyp / tcp.fx	514 237 32 40 | 474 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.infoblock / tcp.recarm	290 237 88 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.infoblock / tcp.recmon	290 237 88 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.infoblock / tcp.label	290 237 88 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.infoblock / tcp.volume	290 237 88 40 | 136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.infoblock / tcp.pan	290 237 88 40 | 190 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.infoblock / tcp.width	290 237 88 40 | 236 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.infoblock / tcp.io	290 237 88 40 | 392 237 68 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.infoblock / tcp.fx	290 237 88 40 | 474 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan5 full1 no overlap tcp.infoblock / tcp.fxbyp	290 237 88 40 | 514 237 32 40
 CASE	w640 200%_A mask0 h300.0 pan5 full1	82 184 640 300	206 198 388 40
 PASS	w640 200%_A mask0 h300.0 pan5 full1 expected name visibility	206 198 388 40
 PASS	w640 200%_A mask0 h300.0 pan5 full1 name inside TCP	206 198 388 40
@@ -5311,12 +5499,26 @@ PASS	w640 200%_B mask0 h50.0 pan5 full1 name inside TCP	206 196 354 40
 PASS	w640 200%_B mask0 h50.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	176 196 30 40 | 136 196 40 40
 PASS	w640 200%_B mask0 h50.0 pan5 full1 no overlap tcp.label / tcp.recarm	206 196 354 40 | 136 196 40 40
 PASS	w640 200%_B mask0 h50.0 pan5 full1 no overlap tcp.label / tcp.recmon	206 196 354 40 | 176 196 30 40
-CASE	w640 200%_B mask0 h100.0 pan5 full1	82 184 640 100	206 198 354 40
-PASS	w640 200%_B mask0 h100.0 pan5 full1 expected name visibility	206 198 354 40
-PASS	w640 200%_B mask0 h100.0 pan5 full1 name inside TCP	206 198 354 40
-PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	176 198 30 40 | 136 198 40 40
-PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.label / tcp.recarm	206 198 354 40 | 136 198 40 40
-PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.label / tcp.recmon	206 198 354 40 | 176 198 30 40
+CASE	w640 200%_B mask0 h100.0 pan5 full1	82 184 640 100	206 190 354 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 expected name visibility	206 190 354 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 name inside TCP	206 190 354 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 late tcp.volume below name	136 237 260 40 | 206 190 354 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 late tcp.pan below name	410 237 40 40 | 206 190 354 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.recmon / tcp.recarm	176 190 30 40 | 136 190 40 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.label / tcp.recarm	206 190 354 40 | 136 190 40 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.label / tcp.recmon	206 190 354 40 | 176 190 30 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.volume / tcp.recarm	136 237 260 40 | 136 190 40 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.volume / tcp.recmon	136 237 260 40 | 176 190 30 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.volume / tcp.label	136 237 260 40 | 206 190 354 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.pan / tcp.recarm	410 237 40 40 | 136 190 40 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.pan / tcp.recmon	410 237 40 40 | 176 190 30 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.pan / tcp.label	410 237 40 40 | 206 190 354 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.pan / tcp.volume	410 237 40 40 | 136 237 260 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.width / tcp.recarm	456 237 40 40 | 136 190 40 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.width / tcp.recmon	456 237 40 40 | 176 190 30 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.width / tcp.label	456 237 40 40 | 206 190 354 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.width / tcp.volume	456 237 40 40 | 136 237 260 40
+PASS	w640 200%_B mask0 h100.0 pan5 full1 no overlap tcp.width / tcp.pan	456 237 40 40 | 410 237 40 40
 CASE	w640 200%_B mask0 h300.0 pan5 full1	82 184 640 300	206 198 388 40
 PASS	w640 200%_B mask0 h300.0 pan5 full1 expected name visibility	206 198 388 40
 PASS	w640 200%_B mask0 h300.0 pan5 full1 name inside TCP	206 198 388 40
@@ -5592,6 +5794,780 @@ CASE	w640 200%_C mask0 h200.0 pan0 full0	82 184 640 200	560 252 0 0
 PASS	w640 200%_C mask0 h200.0 pan0 full0 expected name visibility	560 252 0 0
 PASS	w640 200%_C mask0 h200.0 pan0 full0 name inside TCP	560 252 0 0
 PASS	w640 200%_C mask0 h200.0 pan0 full0 full-row OFF no overlap tcp.recmon / tcp.recarm	600 198 30 40 | 560 198 40 40
+CASE	w640 A mask0 h50.0 pan0 full1	82 184 640 50	144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 expected name visibility	144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 name inside TCP	144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 late tcp.volume below name	109 210 20 20 | 144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 late tcp.pan below name	136 210 20 20 | 144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 late tcp.io below name	163 210 34 20 | 144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 required two-row tcp.volume visible	109 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 required two-row tcp.pan visible	136 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 required two-row tcp.io visible	163 210 34 20
+PASS	w640 A mask0 h50.0 pan0 full1 required two-row tcp.fx visible	204 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 required two-row tcp.env visible	247 210 41 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	129 187 15 20 | 109 187 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.label / tcp.recarm	144 187 514 20 | 109 187 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.label / tcp.recmon	144 187 514 20 | 129 187 15 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.volume / tcp.recarm	109 210 20 20 | 109 187 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.volume / tcp.recmon	109 210 20 20 | 129 187 15 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.volume / tcp.label	109 210 20 20 | 144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.pan / tcp.recarm	136 210 20 20 | 109 187 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.pan / tcp.recmon	136 210 20 20 | 129 187 15 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.pan / tcp.label	136 210 20 20 | 144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.pan / tcp.volume	136 210 20 20 | 109 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.io / tcp.recarm	163 210 34 20 | 109 187 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.io / tcp.recmon	163 210 34 20 | 129 187 15 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.io / tcp.label	163 210 34 20 | 144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.io / tcp.volume	163 210 34 20 | 109 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.io / tcp.pan	163 210 34 20 | 136 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fx / tcp.recarm	204 210 20 20 | 109 187 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fx / tcp.recmon	204 210 20 20 | 129 187 15 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fx / tcp.label	204 210 20 20 | 144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fx / tcp.volume	204 210 20 20 | 109 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fx / tcp.pan	204 210 20 20 | 136 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fx / tcp.io	204 210 20 20 | 163 210 34 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	224 210 16 20 | 109 187 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	224 210 16 20 | 129 187 15 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	224 210 16 20 | 144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	224 210 16 20 | 109 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	224 210 16 20 | 136 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	224 210 16 20 | 163 210 34 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	224 210 16 20 | 204 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.env / tcp.recarm	247 210 41 20 | 109 187 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.env / tcp.recmon	247 210 41 20 | 129 187 15 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.env / tcp.label	247 210 41 20 | 144 187 514 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.env / tcp.volume	247 210 41 20 | 109 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.env / tcp.pan	247 210 41 20 | 136 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.env / tcp.io	247 210 41 20 | 163 210 34 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.env / tcp.fx	247 210 41 20 | 204 210 20 20
+PASS	w640 A mask0 h50.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	247 210 41 20 | 224 210 16 20
+CASE	w640 A mask0 h58.0 pan0 full1	82 184 640 58	144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 expected name visibility	144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 name inside TCP	144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 late tcp.volume below name	109 215 20 20 | 144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 late tcp.pan below name	136 215 20 20 | 144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 late tcp.io below name	163 215 34 20 | 144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 required two-row tcp.volume visible	109 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 required two-row tcp.pan visible	136 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 required two-row tcp.io visible	163 215 34 20
+PASS	w640 A mask0 h58.0 pan0 full1 required two-row tcp.fx visible	204 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 required two-row tcp.env visible	247 215 41 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	129 190 15 20 | 109 190 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.label / tcp.recarm	144 190 514 20 | 109 190 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.label / tcp.recmon	144 190 514 20 | 129 190 15 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.volume / tcp.recarm	109 215 20 20 | 109 190 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.volume / tcp.recmon	109 215 20 20 | 129 190 15 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.volume / tcp.label	109 215 20 20 | 144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.pan / tcp.recarm	136 215 20 20 | 109 190 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.pan / tcp.recmon	136 215 20 20 | 129 190 15 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.pan / tcp.label	136 215 20 20 | 144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.pan / tcp.volume	136 215 20 20 | 109 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.io / tcp.recarm	163 215 34 20 | 109 190 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.io / tcp.recmon	163 215 34 20 | 129 190 15 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.io / tcp.label	163 215 34 20 | 144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.io / tcp.volume	163 215 34 20 | 109 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.io / tcp.pan	163 215 34 20 | 136 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fx / tcp.recarm	204 215 20 20 | 109 190 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fx / tcp.recmon	204 215 20 20 | 129 190 15 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fx / tcp.label	204 215 20 20 | 144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fx / tcp.volume	204 215 20 20 | 109 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fx / tcp.pan	204 215 20 20 | 136 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fx / tcp.io	204 215 20 20 | 163 215 34 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	224 215 16 20 | 109 190 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	224 215 16 20 | 129 190 15 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	224 215 16 20 | 144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	224 215 16 20 | 109 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	224 215 16 20 | 136 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	224 215 16 20 | 163 215 34 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	224 215 16 20 | 204 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.env / tcp.recarm	247 215 41 20 | 109 190 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.env / tcp.recmon	247 215 41 20 | 129 190 15 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.env / tcp.label	247 215 41 20 | 144 190 514 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.env / tcp.volume	247 215 41 20 | 109 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.env / tcp.pan	247 215 41 20 | 136 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.env / tcp.io	247 215 41 20 | 163 215 34 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.env / tcp.fx	247 215 41 20 | 204 215 20 20
+PASS	w640 A mask0 h58.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	247 215 41 20 | 224 215 16 20
+CASE	w640 A mask0 h61.0 pan0 full1	82 184 640 61	144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 expected name visibility	144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 name inside TCP	144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 late tcp.volume below name	109 217 20 20 | 144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 late tcp.pan below name	136 217 20 20 | 144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 late tcp.io below name	163 217 34 20 | 144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 required two-row tcp.volume visible	109 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 required two-row tcp.pan visible	136 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 required two-row tcp.io visible	163 217 34 20
+PASS	w640 A mask0 h61.0 pan0 full1 required two-row tcp.fx visible	204 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 required two-row tcp.env visible	247 217 41 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	129 191 15 20 | 109 191 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.label / tcp.recarm	144 191 514 20 | 109 191 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.label / tcp.recmon	144 191 514 20 | 129 191 15 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.volume / tcp.recarm	109 217 20 20 | 109 191 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.volume / tcp.recmon	109 217 20 20 | 129 191 15 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.volume / tcp.label	109 217 20 20 | 144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.pan / tcp.recarm	136 217 20 20 | 109 191 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.pan / tcp.recmon	136 217 20 20 | 129 191 15 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.pan / tcp.label	136 217 20 20 | 144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.pan / tcp.volume	136 217 20 20 | 109 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.io / tcp.recarm	163 217 34 20 | 109 191 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.io / tcp.recmon	163 217 34 20 | 129 191 15 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.io / tcp.label	163 217 34 20 | 144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.io / tcp.volume	163 217 34 20 | 109 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.io / tcp.pan	163 217 34 20 | 136 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fx / tcp.recarm	204 217 20 20 | 109 191 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fx / tcp.recmon	204 217 20 20 | 129 191 15 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fx / tcp.label	204 217 20 20 | 144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fx / tcp.volume	204 217 20 20 | 109 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fx / tcp.pan	204 217 20 20 | 136 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fx / tcp.io	204 217 20 20 | 163 217 34 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	224 217 16 20 | 109 191 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	224 217 16 20 | 129 191 15 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	224 217 16 20 | 144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	224 217 16 20 | 109 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	224 217 16 20 | 136 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	224 217 16 20 | 163 217 34 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	224 217 16 20 | 204 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.env / tcp.recarm	247 217 41 20 | 109 191 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.env / tcp.recmon	247 217 41 20 | 129 191 15 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.env / tcp.label	247 217 41 20 | 144 191 514 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.env / tcp.volume	247 217 41 20 | 109 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.env / tcp.pan	247 217 41 20 | 136 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.env / tcp.io	247 217 41 20 | 163 217 34 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.env / tcp.fx	247 217 41 20 | 204 217 20 20
+PASS	w640 A mask0 h61.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	247 217 41 20 | 224 217 16 20
+CASE	w640 A mask0 h65.0 pan0 full1	82 184 640 65	144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 expected name visibility	144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 name inside TCP	144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 late tcp.volume below name	109 218 20 20 | 144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 late tcp.pan below name	136 218 20 20 | 144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 late tcp.io below name	163 218 34 20 | 144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 required two-row tcp.volume visible	109 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 required two-row tcp.pan visible	136 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 required two-row tcp.io visible	163 218 34 20
+PASS	w640 A mask0 h65.0 pan0 full1 required two-row tcp.fx visible	204 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 required two-row tcp.env visible	247 218 41 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	129 191 15 20 | 109 191 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.label / tcp.recarm	144 191 514 20 | 109 191 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.label / tcp.recmon	144 191 514 20 | 129 191 15 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.volume / tcp.recarm	109 218 20 20 | 109 191 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.volume / tcp.recmon	109 218 20 20 | 129 191 15 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.volume / tcp.label	109 218 20 20 | 144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.pan / tcp.recarm	136 218 20 20 | 109 191 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.pan / tcp.recmon	136 218 20 20 | 129 191 15 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.pan / tcp.label	136 218 20 20 | 144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.pan / tcp.volume	136 218 20 20 | 109 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.io / tcp.recarm	163 218 34 20 | 109 191 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.io / tcp.recmon	163 218 34 20 | 129 191 15 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.io / tcp.label	163 218 34 20 | 144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.io / tcp.volume	163 218 34 20 | 109 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.io / tcp.pan	163 218 34 20 | 136 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fx / tcp.recarm	204 218 20 20 | 109 191 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fx / tcp.recmon	204 218 20 20 | 129 191 15 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fx / tcp.label	204 218 20 20 | 144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fx / tcp.volume	204 218 20 20 | 109 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fx / tcp.pan	204 218 20 20 | 136 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fx / tcp.io	204 218 20 20 | 163 218 34 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	224 218 16 20 | 109 191 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	224 218 16 20 | 129 191 15 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	224 218 16 20 | 144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	224 218 16 20 | 109 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	224 218 16 20 | 136 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	224 218 16 20 | 163 218 34 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	224 218 16 20 | 204 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.env / tcp.recarm	247 218 41 20 | 109 191 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.env / tcp.recmon	247 218 41 20 | 129 191 15 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.env / tcp.label	247 218 41 20 | 144 191 514 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.env / tcp.volume	247 218 41 20 | 109 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.env / tcp.pan	247 218 41 20 | 136 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.env / tcp.io	247 218 41 20 | 163 218 34 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.env / tcp.fx	247 218 41 20 | 204 218 20 20
+PASS	w640 A mask0 h65.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	247 218 41 20 | 224 218 16 20
+CASE	w640 150%_A mask0 h75.0 pan0 full1	82 184 640 75	175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 expected name visibility	175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 name inside TCP	175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 late tcp.volume below name	123 223 30 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 late tcp.pan below name	163 223 30 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 late tcp.io below name	204 223 51 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 required two-row tcp.volume visible	123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 required two-row tcp.pan visible	163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 required two-row tcp.io visible	204 223 51 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 required two-row tcp.fx visible	265 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 required two-row tcp.env visible	330 223 62 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	153 189 23 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.label / tcp.recarm	175 189 426 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.label / tcp.recmon	175 189 426 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.volume / tcp.recarm	123 223 30 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.volume / tcp.recmon	123 223 30 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.volume / tcp.label	123 223 30 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.pan / tcp.recarm	163 223 30 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.pan / tcp.recmon	163 223 30 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.pan / tcp.label	163 223 30 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.pan / tcp.volume	163 223 30 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.io / tcp.recarm	204 223 51 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.io / tcp.recmon	204 223 51 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.io / tcp.label	204 223 51 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.io / tcp.volume	204 223 51 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.io / tcp.pan	204 223 51 30 | 163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fx / tcp.recarm	265 223 30 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fx / tcp.recmon	265 223 30 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fx / tcp.label	265 223 30 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fx / tcp.volume	265 223 30 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fx / tcp.pan	265 223 30 30 | 163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fx / tcp.io	265 223 30 30 | 204 223 51 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	295 223 24 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	295 223 24 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	295 223 24 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	295 223 24 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	295 223 24 30 | 163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	295 223 24 30 | 204 223 51 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	295 223 24 30 | 265 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.env / tcp.recarm	330 223 62 30 | 123 189 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.env / tcp.recmon	330 223 62 30 | 153 189 23 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.env / tcp.label	330 223 62 30 | 175 189 426 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.env / tcp.volume	330 223 62 30 | 123 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.env / tcp.pan	330 223 62 30 | 163 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.env / tcp.io	330 223 62 30 | 204 223 51 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.env / tcp.fx	330 223 62 30 | 265 223 30 30
+PASS	w640 150%_A mask0 h75.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	330 223 62 30 | 295 223 24 30
+CASE	w640 150%_A mask0 h87.0 pan0 full1	82 184 640 87	175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 expected name visibility	175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 name inside TCP	175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 late tcp.volume below name	123 231 30 30 | 175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 late tcp.pan below name	163 231 30 30 | 175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 late tcp.io below name	204 231 51 30 | 175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 required two-row tcp.volume visible	123 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 required two-row tcp.pan visible	163 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 required two-row tcp.io visible	204 231 51 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 required two-row tcp.fx visible	265 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 required two-row tcp.env visible	330 231 62 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	153 193 23 30 | 123 193 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.label / tcp.recarm	175 193 451 30 | 123 193 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.label / tcp.recmon	175 193 451 30 | 153 193 23 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.volume / tcp.recarm	123 231 30 30 | 123 193 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.volume / tcp.recmon	123 231 30 30 | 153 193 23 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.volume / tcp.label	123 231 30 30 | 175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.pan / tcp.recarm	163 231 30 30 | 123 193 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.pan / tcp.recmon	163 231 30 30 | 153 193 23 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.pan / tcp.label	163 231 30 30 | 175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.pan / tcp.volume	163 231 30 30 | 123 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.io / tcp.recarm	204 231 51 30 | 123 193 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.io / tcp.recmon	204 231 51 30 | 153 193 23 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.io / tcp.label	204 231 51 30 | 175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.io / tcp.volume	204 231 51 30 | 123 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.io / tcp.pan	204 231 51 30 | 163 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fx / tcp.recarm	265 231 30 30 | 123 193 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fx / tcp.recmon	265 231 30 30 | 153 193 23 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fx / tcp.label	265 231 30 30 | 175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fx / tcp.volume	265 231 30 30 | 123 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fx / tcp.pan	265 231 30 30 | 163 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fx / tcp.io	265 231 30 30 | 204 231 51 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	295 231 24 30 | 123 193 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	295 231 24 30 | 153 193 23 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	295 231 24 30 | 175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	295 231 24 30 | 123 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	295 231 24 30 | 163 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	295 231 24 30 | 204 231 51 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	295 231 24 30 | 265 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.env / tcp.recarm	330 231 62 30 | 123 193 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.env / tcp.recmon	330 231 62 30 | 153 193 23 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.env / tcp.label	330 231 62 30 | 175 193 451 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.env / tcp.volume	330 231 62 30 | 123 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.env / tcp.pan	330 231 62 30 | 163 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.env / tcp.io	330 231 62 30 | 204 231 51 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.env / tcp.fx	330 231 62 30 | 265 231 30 30
+PASS	w640 150%_A mask0 h87.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	330 231 62 30 | 295 231 24 30
+CASE	w640 150%_A mask0 h91.5 pan0 full1	82 184 640 91	175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 expected name visibility	175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 name inside TCP	175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 late tcp.volume below name	123 234 30 30 | 175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 late tcp.pan below name	163 234 30 30 | 175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 late tcp.io below name	204 234 51 30 | 175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 required two-row tcp.volume visible	123 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 required two-row tcp.pan visible	163 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 required two-row tcp.io visible	204 234 51 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 required two-row tcp.fx visible	265 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 required two-row tcp.env visible	330 234 62 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.recmon / tcp.recarm	153 194 23 30 | 123 194 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.label / tcp.recarm	175 194 451 30 | 123 194 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.label / tcp.recmon	175 194 451 30 | 153 194 23 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.volume / tcp.recarm	123 234 30 30 | 123 194 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.volume / tcp.recmon	123 234 30 30 | 153 194 23 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.volume / tcp.label	123 234 30 30 | 175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.pan / tcp.recarm	163 234 30 30 | 123 194 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.pan / tcp.recmon	163 234 30 30 | 153 194 23 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.pan / tcp.label	163 234 30 30 | 175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.pan / tcp.volume	163 234 30 30 | 123 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.io / tcp.recarm	204 234 51 30 | 123 194 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.io / tcp.recmon	204 234 51 30 | 153 194 23 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.io / tcp.label	204 234 51 30 | 175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.io / tcp.volume	204 234 51 30 | 123 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.io / tcp.pan	204 234 51 30 | 163 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fx / tcp.recarm	265 234 30 30 | 123 194 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fx / tcp.recmon	265 234 30 30 | 153 194 23 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fx / tcp.label	265 234 30 30 | 175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fx / tcp.volume	265 234 30 30 | 123 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fx / tcp.pan	265 234 30 30 | 163 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fx / tcp.io	265 234 30 30 | 204 234 51 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	295 234 24 30 | 123 194 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	295 234 24 30 | 153 194 23 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fxbyp / tcp.label	295 234 24 30 | 175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fxbyp / tcp.volume	295 234 24 30 | 123 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fxbyp / tcp.pan	295 234 24 30 | 163 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fxbyp / tcp.io	295 234 24 30 | 204 234 51 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.fxbyp / tcp.fx	295 234 24 30 | 265 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.env / tcp.recarm	330 234 62 30 | 123 194 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.env / tcp.recmon	330 234 62 30 | 153 194 23 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.env / tcp.label	330 234 62 30 | 175 194 451 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.env / tcp.volume	330 234 62 30 | 123 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.env / tcp.pan	330 234 62 30 | 163 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.env / tcp.io	330 234 62 30 | 204 234 51 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.env / tcp.fx	330 234 62 30 | 265 234 30 30
+PASS	w640 150%_A mask0 h91.5 pan0 full1 no overlap tcp.env / tcp.fxbyp	330 234 62 30 | 295 234 24 30
+CASE	w640 150%_A mask0 h97.5 pan0 full1	82 184 640 97	175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 expected name visibility	175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 name inside TCP	175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 late tcp.volume below name	123 235 30 30 | 175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 late tcp.pan below name	163 235 30 30 | 175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 late tcp.io below name	204 235 51 30 | 175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 required two-row tcp.volume visible	123 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 required two-row tcp.pan visible	163 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 required two-row tcp.io visible	204 235 51 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 required two-row tcp.fx visible	265 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 required two-row tcp.env visible	330 235 62 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.recmon / tcp.recarm	153 195 23 30 | 123 195 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.label / tcp.recarm	175 195 451 30 | 123 195 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.label / tcp.recmon	175 195 451 30 | 153 195 23 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.volume / tcp.recarm	123 235 30 30 | 123 195 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.volume / tcp.recmon	123 235 30 30 | 153 195 23 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.volume / tcp.label	123 235 30 30 | 175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.pan / tcp.recarm	163 235 30 30 | 123 195 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.pan / tcp.recmon	163 235 30 30 | 153 195 23 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.pan / tcp.label	163 235 30 30 | 175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.pan / tcp.volume	163 235 30 30 | 123 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.io / tcp.recarm	204 235 51 30 | 123 195 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.io / tcp.recmon	204 235 51 30 | 153 195 23 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.io / tcp.label	204 235 51 30 | 175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.io / tcp.volume	204 235 51 30 | 123 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.io / tcp.pan	204 235 51 30 | 163 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fx / tcp.recarm	265 235 30 30 | 123 195 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fx / tcp.recmon	265 235 30 30 | 153 195 23 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fx / tcp.label	265 235 30 30 | 175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fx / tcp.volume	265 235 30 30 | 123 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fx / tcp.pan	265 235 30 30 | 163 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fx / tcp.io	265 235 30 30 | 204 235 51 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	295 235 24 30 | 123 195 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	295 235 24 30 | 153 195 23 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fxbyp / tcp.label	295 235 24 30 | 175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fxbyp / tcp.volume	295 235 24 30 | 123 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fxbyp / tcp.pan	295 235 24 30 | 163 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fxbyp / tcp.io	295 235 24 30 | 204 235 51 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.fxbyp / tcp.fx	295 235 24 30 | 265 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.env / tcp.recarm	330 235 62 30 | 123 195 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.env / tcp.recmon	330 235 62 30 | 153 195 23 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.env / tcp.label	330 235 62 30 | 175 195 451 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.env / tcp.volume	330 235 62 30 | 123 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.env / tcp.pan	330 235 62 30 | 163 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.env / tcp.io	330 235 62 30 | 204 235 51 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.env / tcp.fx	330 235 62 30 | 265 235 30 30
+PASS	w640 150%_A mask0 h97.5 pan0 full1 no overlap tcp.env / tcp.fxbyp	330 235 62 30 | 295 235 24 30
+CASE	w640 200%_A mask0 h100.0 pan0 full1	82 184 640 100	206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 expected name visibility	206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 name inside TCP	206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 late tcp.volume below name	136 237 40 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 late tcp.pan below name	190 237 40 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 late tcp.io below name	244 237 68 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 required two-row tcp.volume visible	136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 required two-row tcp.pan visible	190 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 required two-row tcp.io visible	244 237 68 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 required two-row tcp.fx visible	326 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 required two-row tcp.env visible	412 237 82 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	176 190 30 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.label / tcp.recarm	206 190 354 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.label / tcp.recmon	206 190 354 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.volume / tcp.recarm	136 237 40 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.volume / tcp.recmon	136 237 40 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.volume / tcp.label	136 237 40 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.pan / tcp.recarm	190 237 40 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.pan / tcp.recmon	190 237 40 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.pan / tcp.label	190 237 40 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.pan / tcp.volume	190 237 40 40 | 136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.io / tcp.recarm	244 237 68 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.io / tcp.recmon	244 237 68 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.io / tcp.label	244 237 68 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.io / tcp.volume	244 237 68 40 | 136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.io / tcp.pan	244 237 68 40 | 190 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fx / tcp.recarm	326 237 40 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fx / tcp.recmon	326 237 40 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fx / tcp.label	326 237 40 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fx / tcp.volume	326 237 40 40 | 136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fx / tcp.pan	326 237 40 40 | 190 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fx / tcp.io	326 237 40 40 | 244 237 68 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	366 237 32 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	366 237 32 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	366 237 32 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	366 237 32 40 | 136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	366 237 32 40 | 190 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	366 237 32 40 | 244 237 68 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	366 237 32 40 | 326 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.env / tcp.recarm	412 237 82 40 | 136 190 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.env / tcp.recmon	412 237 82 40 | 176 190 30 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.env / tcp.label	412 237 82 40 | 206 190 354 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.env / tcp.volume	412 237 82 40 | 136 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.env / tcp.pan	412 237 82 40 | 190 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.env / tcp.io	412 237 82 40 | 244 237 68 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.env / tcp.fx	412 237 82 40 | 326 237 40 40
+PASS	w640 200%_A mask0 h100.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	412 237 82 40 | 366 237 32 40
+CASE	w640 200%_A mask0 h116.0 pan0 full1	82 184 640 116	206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 expected name visibility	206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 name inside TCP	206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 late tcp.volume below name	136 247 40 40 | 206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 late tcp.pan below name	190 247 40 40 | 206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 late tcp.io below name	244 247 68 40 | 206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 required two-row tcp.volume visible	136 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 required two-row tcp.pan visible	190 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 required two-row tcp.io visible	244 247 68 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 required two-row tcp.fx visible	326 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 required two-row tcp.env visible	412 247 82 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	176 196 30 40 | 136 196 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.label / tcp.recarm	206 196 388 40 | 136 196 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.label / tcp.recmon	206 196 388 40 | 176 196 30 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.volume / tcp.recarm	136 247 40 40 | 136 196 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.volume / tcp.recmon	136 247 40 40 | 176 196 30 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.volume / tcp.label	136 247 40 40 | 206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.pan / tcp.recarm	190 247 40 40 | 136 196 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.pan / tcp.recmon	190 247 40 40 | 176 196 30 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.pan / tcp.label	190 247 40 40 | 206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.pan / tcp.volume	190 247 40 40 | 136 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.io / tcp.recarm	244 247 68 40 | 136 196 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.io / tcp.recmon	244 247 68 40 | 176 196 30 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.io / tcp.label	244 247 68 40 | 206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.io / tcp.volume	244 247 68 40 | 136 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.io / tcp.pan	244 247 68 40 | 190 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fx / tcp.recarm	326 247 40 40 | 136 196 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fx / tcp.recmon	326 247 40 40 | 176 196 30 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fx / tcp.label	326 247 40 40 | 206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fx / tcp.volume	326 247 40 40 | 136 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fx / tcp.pan	326 247 40 40 | 190 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fx / tcp.io	326 247 40 40 | 244 247 68 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	366 247 32 40 | 136 196 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	366 247 32 40 | 176 196 30 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	366 247 32 40 | 206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	366 247 32 40 | 136 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	366 247 32 40 | 190 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	366 247 32 40 | 244 247 68 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	366 247 32 40 | 326 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.env / tcp.recarm	412 247 82 40 | 136 196 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.env / tcp.recmon	412 247 82 40 | 176 196 30 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.env / tcp.label	412 247 82 40 | 206 196 388 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.env / tcp.volume	412 247 82 40 | 136 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.env / tcp.pan	412 247 82 40 | 190 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.env / tcp.io	412 247 82 40 | 244 247 68 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.env / tcp.fx	412 247 82 40 | 326 247 40 40
+PASS	w640 200%_A mask0 h116.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	412 247 82 40 | 366 247 32 40
+CASE	w640 200%_A mask0 h122.0 pan0 full1	82 184 640 122	206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 expected name visibility	206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 name inside TCP	206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 late tcp.volume below name	136 251 40 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 late tcp.pan below name	190 251 40 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 late tcp.io below name	244 251 68 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 required two-row tcp.volume visible	136 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 required two-row tcp.pan visible	190 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 required two-row tcp.io visible	244 251 68 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 required two-row tcp.fx visible	326 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 required two-row tcp.env visible	412 251 82 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	176 198 30 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.label / tcp.recarm	206 198 388 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.label / tcp.recmon	206 198 388 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.volume / tcp.recarm	136 251 40 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.volume / tcp.recmon	136 251 40 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.volume / tcp.label	136 251 40 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.pan / tcp.recarm	190 251 40 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.pan / tcp.recmon	190 251 40 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.pan / tcp.label	190 251 40 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.pan / tcp.volume	190 251 40 40 | 136 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.io / tcp.recarm	244 251 68 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.io / tcp.recmon	244 251 68 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.io / tcp.label	244 251 68 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.io / tcp.volume	244 251 68 40 | 136 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.io / tcp.pan	244 251 68 40 | 190 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fx / tcp.recarm	326 251 40 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fx / tcp.recmon	326 251 40 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fx / tcp.label	326 251 40 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fx / tcp.volume	326 251 40 40 | 136 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fx / tcp.pan	326 251 40 40 | 190 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fx / tcp.io	326 251 40 40 | 244 251 68 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	366 251 32 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	366 251 32 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	366 251 32 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	366 251 32 40 | 136 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	366 251 32 40 | 190 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	366 251 32 40 | 244 251 68 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	366 251 32 40 | 326 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.env / tcp.recarm	412 251 82 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.env / tcp.recmon	412 251 82 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.env / tcp.label	412 251 82 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.env / tcp.volume	412 251 82 40 | 136 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.env / tcp.pan	412 251 82 40 | 190 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.env / tcp.io	412 251 82 40 | 244 251 68 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.env / tcp.fx	412 251 82 40 | 326 251 40 40
+PASS	w640 200%_A mask0 h122.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	412 251 82 40 | 366 251 32 40
+CASE	w640 200%_A mask0 h130.0 pan0 full1	82 184 640 130	206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 expected name visibility	206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 name inside TCP	206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 late tcp.volume below name	136 252 40 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 late tcp.pan below name	190 252 40 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 late tcp.io below name	244 252 68 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 required two-row tcp.volume visible	136 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 required two-row tcp.pan visible	190 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 required two-row tcp.io visible	244 252 68 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 required two-row tcp.fx visible	326 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 required two-row tcp.env visible	412 252 82 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	176 198 30 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.label / tcp.recarm	206 198 388 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.label / tcp.recmon	206 198 388 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.volume / tcp.recarm	136 252 40 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.volume / tcp.recmon	136 252 40 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.volume / tcp.label	136 252 40 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.pan / tcp.recarm	190 252 40 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.pan / tcp.recmon	190 252 40 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.pan / tcp.label	190 252 40 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.pan / tcp.volume	190 252 40 40 | 136 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.io / tcp.recarm	244 252 68 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.io / tcp.recmon	244 252 68 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.io / tcp.label	244 252 68 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.io / tcp.volume	244 252 68 40 | 136 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.io / tcp.pan	244 252 68 40 | 190 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fx / tcp.recarm	326 252 40 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fx / tcp.recmon	326 252 40 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fx / tcp.label	326 252 40 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fx / tcp.volume	326 252 40 40 | 136 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fx / tcp.pan	326 252 40 40 | 190 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fx / tcp.io	326 252 40 40 | 244 252 68 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	366 252 32 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	366 252 32 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	366 252 32 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	366 252 32 40 | 136 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	366 252 32 40 | 190 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	366 252 32 40 | 244 252 68 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	366 252 32 40 | 326 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.env / tcp.recarm	412 252 82 40 | 136 198 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.env / tcp.recmon	412 252 82 40 | 176 198 30 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.env / tcp.label	412 252 82 40 | 206 198 388 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.env / tcp.volume	412 252 82 40 | 136 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.env / tcp.pan	412 252 82 40 | 190 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.env / tcp.io	412 252 82 40 | 244 252 68 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.env / tcp.fx	412 252 82 40 | 326 252 40 40
+PASS	w640 200%_A mask0 h130.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	412 252 82 40 | 366 252 32 40
+CASE	w640 A mask3 h50.0 pan0 full1	82 184 640 50	144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 expected name visibility	144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 name inside TCP	144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 kept tcp.volume visible	536 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 kept tcp.volume first row	536 187 20 20 | 144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 kept tcp.pan visible	563 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 kept tcp.pan first row	563 187 20 20 | 144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 late tcp.io below name	116 210 34 20 | 144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 required two-row tcp.volume visible	536 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 required two-row tcp.pan visible	563 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 required two-row tcp.io visible	116 210 34 20
+PASS	w640 A mask3 h50.0 pan0 full1 required two-row tcp.fx visible	157 210 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 required two-row tcp.env visible	200 210 41 20
+PASS	w640 A mask3 h50.0 pan0 full1 reference-style tcp.recinput visible	277 210 306 20
+PASS	w640 A mask3 h50.0 pan0 full1 reference-style tcp.fxin visible	248 210 29 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	129 187 15 20 | 109 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.label / tcp.recarm	144 187 392 20 | 109 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.label / tcp.recmon	144 187 392 20 | 129 187 15 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.volume / tcp.recarm	536 187 20 20 | 109 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.volume / tcp.recmon	536 187 20 20 | 129 187 15 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.volume / tcp.label	536 187 20 20 | 144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.pan / tcp.recarm	563 187 20 20 | 109 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.pan / tcp.recmon	563 187 20 20 | 129 187 15 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.pan / tcp.label	563 187 20 20 | 144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.pan / tcp.volume	563 187 20 20 | 536 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.io / tcp.recarm	116 210 34 20 | 109 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.io / tcp.recmon	116 210 34 20 | 129 187 15 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.io / tcp.label	116 210 34 20 | 144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.io / tcp.volume	116 210 34 20 | 536 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.io / tcp.pan	116 210 34 20 | 563 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fx / tcp.recarm	157 210 20 20 | 109 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fx / tcp.recmon	157 210 20 20 | 129 187 15 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fx / tcp.label	157 210 20 20 | 144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fx / tcp.volume	157 210 20 20 | 536 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fx / tcp.pan	157 210 20 20 | 563 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fx / tcp.io	157 210 20 20 | 116 210 34 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	177 210 16 20 | 109 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	177 210 16 20 | 129 187 15 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	177 210 16 20 | 144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	177 210 16 20 | 536 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	177 210 16 20 | 563 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	177 210 16 20 | 116 210 34 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	177 210 16 20 | 157 210 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.env / tcp.recarm	200 210 41 20 | 109 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.env / tcp.recmon	200 210 41 20 | 129 187 15 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.env / tcp.label	200 210 41 20 | 144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.env / tcp.volume	200 210 41 20 | 536 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.env / tcp.pan	200 210 41 20 | 563 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.env / tcp.io	200 210 41 20 | 116 210 34 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.env / tcp.fx	200 210 41 20 | 157 210 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	200 210 41 20 | 177 210 16 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxin / tcp.recarm	248 210 29 20 | 109 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxin / tcp.recmon	248 210 29 20 | 129 187 15 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxin / tcp.label	248 210 29 20 | 144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxin / tcp.volume	248 210 29 20 | 536 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxin / tcp.pan	248 210 29 20 | 563 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxin / tcp.io	248 210 29 20 | 116 210 34 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxin / tcp.fx	248 210 29 20 | 157 210 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxin / tcp.fxbyp	248 210 29 20 | 177 210 16 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.fxin / tcp.env	248 210 29 20 | 200 210 41 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.recinput / tcp.recarm	277 210 306 20 | 109 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.recinput / tcp.recmon	277 210 306 20 | 129 187 15 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.recinput / tcp.label	277 210 306 20 | 144 187 392 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.recinput / tcp.volume	277 210 306 20 | 536 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.recinput / tcp.pan	277 210 306 20 | 563 187 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.recinput / tcp.io	277 210 306 20 | 116 210 34 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.recinput / tcp.fx	277 210 306 20 | 157 210 20 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.recinput / tcp.fxbyp	277 210 306 20 | 177 210 16 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.recinput / tcp.env	277 210 306 20 | 200 210 41 20
+PASS	w640 A mask3 h50.0 pan0 full1 no overlap tcp.recinput / tcp.fxin	277 210 306 20 | 248 210 29 20
+CASE	w640 A mask3 h58.0 pan0 full1	82 184 640 58	144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 expected name visibility	144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 name inside TCP	144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 kept tcp.volume visible	536 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 kept tcp.volume first row	536 190 20 20 | 144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 kept tcp.pan visible	563 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 kept tcp.pan first row	563 190 20 20 | 144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 late tcp.io below name	116 215 34 20 | 144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 required two-row tcp.volume visible	536 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 required two-row tcp.pan visible	563 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 required two-row tcp.io visible	116 215 34 20
+PASS	w640 A mask3 h58.0 pan0 full1 required two-row tcp.fx visible	157 215 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 required two-row tcp.env visible	200 215 41 20
+PASS	w640 A mask3 h58.0 pan0 full1 reference-style tcp.recinput visible	277 215 306 20
+PASS	w640 A mask3 h58.0 pan0 full1 reference-style tcp.fxin visible	248 215 29 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	129 190 15 20 | 109 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.label / tcp.recarm	144 190 392 20 | 109 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.label / tcp.recmon	144 190 392 20 | 129 190 15 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.volume / tcp.recarm	536 190 20 20 | 109 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.volume / tcp.recmon	536 190 20 20 | 129 190 15 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.volume / tcp.label	536 190 20 20 | 144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.pan / tcp.recarm	563 190 20 20 | 109 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.pan / tcp.recmon	563 190 20 20 | 129 190 15 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.pan / tcp.label	563 190 20 20 | 144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.pan / tcp.volume	563 190 20 20 | 536 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.io / tcp.recarm	116 215 34 20 | 109 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.io / tcp.recmon	116 215 34 20 | 129 190 15 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.io / tcp.label	116 215 34 20 | 144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.io / tcp.volume	116 215 34 20 | 536 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.io / tcp.pan	116 215 34 20 | 563 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fx / tcp.recarm	157 215 20 20 | 109 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fx / tcp.recmon	157 215 20 20 | 129 190 15 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fx / tcp.label	157 215 20 20 | 144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fx / tcp.volume	157 215 20 20 | 536 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fx / tcp.pan	157 215 20 20 | 563 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fx / tcp.io	157 215 20 20 | 116 215 34 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	177 215 16 20 | 109 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	177 215 16 20 | 129 190 15 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	177 215 16 20 | 144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	177 215 16 20 | 536 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	177 215 16 20 | 563 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	177 215 16 20 | 116 215 34 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	177 215 16 20 | 157 215 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.env / tcp.recarm	200 215 41 20 | 109 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.env / tcp.recmon	200 215 41 20 | 129 190 15 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.env / tcp.label	200 215 41 20 | 144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.env / tcp.volume	200 215 41 20 | 536 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.env / tcp.pan	200 215 41 20 | 563 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.env / tcp.io	200 215 41 20 | 116 215 34 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.env / tcp.fx	200 215 41 20 | 157 215 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	200 215 41 20 | 177 215 16 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxin / tcp.recarm	248 215 29 20 | 109 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxin / tcp.recmon	248 215 29 20 | 129 190 15 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxin / tcp.label	248 215 29 20 | 144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxin / tcp.volume	248 215 29 20 | 536 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxin / tcp.pan	248 215 29 20 | 563 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxin / tcp.io	248 215 29 20 | 116 215 34 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxin / tcp.fx	248 215 29 20 | 157 215 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxin / tcp.fxbyp	248 215 29 20 | 177 215 16 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.fxin / tcp.env	248 215 29 20 | 200 215 41 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.recinput / tcp.recarm	277 215 306 20 | 109 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.recinput / tcp.recmon	277 215 306 20 | 129 190 15 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.recinput / tcp.label	277 215 306 20 | 144 190 392 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.recinput / tcp.volume	277 215 306 20 | 536 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.recinput / tcp.pan	277 215 306 20 | 563 190 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.recinput / tcp.io	277 215 306 20 | 116 215 34 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.recinput / tcp.fx	277 215 306 20 | 157 215 20 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.recinput / tcp.fxbyp	277 215 306 20 | 177 215 16 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.recinput / tcp.env	277 215 306 20 | 200 215 41 20
+PASS	w640 A mask3 h58.0 pan0 full1 no overlap tcp.recinput / tcp.fxin	277 215 306 20 | 248 215 29 20
+CASE	w640 A mask3 h88.0 pan0 full1	82 184 640 88	144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 expected name visibility	144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 name inside TCP	144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 kept tcp.volume visible	536 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 kept tcp.volume first row	536 191 20 20 | 144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 kept tcp.pan visible	563 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 kept tcp.pan first row	563 191 20 20 | 144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 late tcp.io below name	116 218 34 20 | 144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 required two-row tcp.volume visible	536 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 required two-row tcp.pan visible	563 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 required two-row tcp.io visible	116 218 34 20
+PASS	w640 A mask3 h88.0 pan0 full1 required two-row tcp.fx visible	157 218 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 required two-row tcp.env visible	200 218 41 20
+PASS	w640 A mask3 h88.0 pan0 full1 reference-style tcp.recinput visible	277 218 306 20
+PASS	w640 A mask3 h88.0 pan0 full1 reference-style tcp.fxin visible	248 218 29 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.recmon / tcp.recarm	129 191 15 20 | 109 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.label / tcp.recarm	144 191 392 20 | 109 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.label / tcp.recmon	144 191 392 20 | 129 191 15 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.volume / tcp.recarm	536 191 20 20 | 109 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.volume / tcp.recmon	536 191 20 20 | 129 191 15 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.volume / tcp.label	536 191 20 20 | 144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.pan / tcp.recarm	563 191 20 20 | 109 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.pan / tcp.recmon	563 191 20 20 | 129 191 15 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.pan / tcp.label	563 191 20 20 | 144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.pan / tcp.volume	563 191 20 20 | 536 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.io / tcp.recarm	116 218 34 20 | 109 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.io / tcp.recmon	116 218 34 20 | 129 191 15 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.io / tcp.label	116 218 34 20 | 144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.io / tcp.volume	116 218 34 20 | 536 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.io / tcp.pan	116 218 34 20 | 563 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fx / tcp.recarm	157 218 20 20 | 109 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fx / tcp.recmon	157 218 20 20 | 129 191 15 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fx / tcp.label	157 218 20 20 | 144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fx / tcp.volume	157 218 20 20 | 536 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fx / tcp.pan	157 218 20 20 | 563 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fx / tcp.io	157 218 20 20 | 116 218 34 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxbyp / tcp.recarm	177 218 16 20 | 109 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxbyp / tcp.recmon	177 218 16 20 | 129 191 15 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxbyp / tcp.label	177 218 16 20 | 144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxbyp / tcp.volume	177 218 16 20 | 536 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxbyp / tcp.pan	177 218 16 20 | 563 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxbyp / tcp.io	177 218 16 20 | 116 218 34 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxbyp / tcp.fx	177 218 16 20 | 157 218 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.env / tcp.recarm	200 218 41 20 | 109 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.env / tcp.recmon	200 218 41 20 | 129 191 15 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.env / tcp.label	200 218 41 20 | 144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.env / tcp.volume	200 218 41 20 | 536 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.env / tcp.pan	200 218 41 20 | 563 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.env / tcp.io	200 218 41 20 | 116 218 34 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.env / tcp.fx	200 218 41 20 | 157 218 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.env / tcp.fxbyp	200 218 41 20 | 177 218 16 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxin / tcp.recarm	248 218 29 20 | 109 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxin / tcp.recmon	248 218 29 20 | 129 191 15 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxin / tcp.label	248 218 29 20 | 144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxin / tcp.volume	248 218 29 20 | 536 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxin / tcp.pan	248 218 29 20 | 563 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxin / tcp.io	248 218 29 20 | 116 218 34 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxin / tcp.fx	248 218 29 20 | 157 218 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxin / tcp.fxbyp	248 218 29 20 | 177 218 16 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.fxin / tcp.env	248 218 29 20 | 200 218 41 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.recinput / tcp.recarm	277 218 306 20 | 109 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.recinput / tcp.recmon	277 218 306 20 | 129 191 15 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.recinput / tcp.label	277 218 306 20 | 144 191 392 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.recinput / tcp.volume	277 218 306 20 | 536 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.recinput / tcp.pan	277 218 306 20 | 563 191 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.recinput / tcp.io	277 218 306 20 | 116 218 34 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.recinput / tcp.fx	277 218 306 20 | 157 218 20 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.recinput / tcp.fxbyp	277 218 306 20 | 177 218 16 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.recinput / tcp.env	277 218 306 20 | 200 218 41 20
+PASS	w640 A mask3 h88.0 pan0 full1 no overlap tcp.recinput / tcp.fxin	277 218 306 20 | 248 218 29 20
 PASS	indent reference control visible	109 191 20 20
 INDENT_STATE	0	0	0	1.0	109 191 20 20
 PASS	indent smart0 depth0	0 expected 0
@@ -5893,4 +6869,4 @@ PASS	mixer smart1 depth5	66 expected 66
 PASS	mixer label visible depth6	853 1147 108 52
 PASS	mixer smart1 depth6	76 expected 76
 ADJUSTER_ACTION	42234	Options: Show theme adjuster
-DONE	5776	0	100
+DONE	6737	0	115

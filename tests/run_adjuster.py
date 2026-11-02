@@ -35,6 +35,8 @@ def run(root):
     shutil.copyfile(ROOT / 'scripts/ReaSkii_Adjuster.lua', root / 'Scripts/Cockos/ReaSkii_Adjuster.lua')
     shutil.copyfile(ROOT / 'tests/adjuster_smoke.lua', root / 'adjuster-smoke.lua')
     shutil.copyfile(ROOT / 'dist/ReaSkii.ReaperThemeZip', root / 'ColorThemes/ReaSkii.ReaperThemeZip')
+    # Do not inherit plugin paths written by the previous portable QA process.
+    (root / 'reaper.ini').write_text('[REAPER]\nfirst_run=0\nloadlastproj=0\nvstpath64=\nvstpath=\nwnd_w=1600\nwnd_h=1000\nleftpanewid=540\nmixwnd_vis=0\n')
     (root / 'reaper-themeconfig.ini').unlink(missing_ok=True)
     result = root / 'adjuster-result.txt'
     result.unlink(missing_ok=True)
@@ -49,8 +51,13 @@ def run(root):
         else:
             raise RuntimeError(f'Adjuster did not appear: {windows()}')
         handle = found[0]
+        display.focus(handle)
+        time.sleep(0.5)
         display.click(handle, 29, 57)
-        time.sleep(1)
+        for _ in range(24):
+            time.sleep(0.5)
+            if result.exists():
+                break
         text = result.read_text()
         if not text.startswith('PASS:'):
             raise AssertionError(text)

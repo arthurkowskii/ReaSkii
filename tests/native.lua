@@ -73,16 +73,29 @@ for _,layout in ipairs(layouts) do
  cases[#cases+1]={layout=layout,scale=scale,mask=0,height=100*scale,arm=0,pan=6}
  cases[#cases+1]={layout=layout,scale=scale,mask=0,height=100*scale,arm=0,pan=0,full=0}
 end
+-- Screenshot regression: ordinary two-row tracks must retain usable controls,
+-- not merely a non-overlapping name. No "keep" flags are enabled here.
+for _,layout in ipairs({'A','150%_A','200%_A'}) do
+ local scale=layout:find('150%%') and 1.5 or layout:find('200%%') and 2 or 1
+ for _,height in ipairs({50,58,61,65}) do
+  cases[#cases+1]={layout=layout,scale=scale,mask=0,height=height*scale,arm=0,pan=0,required=true}
+ end
+end
+for _,height in ipairs({50,58,88}) do
+ cases[#cases+1]={layout='A',scale=1,mask=3,height=height,arm=0,pan=0,required=true,reference=true}
+end
 local index,stage=1,0
 local function configure(c)
  reaper.GetSetMediaTrackInfo_String(target,'P_TCP_LAYOUT',c.layout,true)
  reaper.SetMediaTrackInfo_Value(target,'I_HEIGHTOVERRIDE',c.height)
  reaper.SetMediaTrackInfo_Value(target,'I_RECARM',c.arm)
  reaper.SetMediaTrackInfo_Value(target,'I_PANMODE',c.pan)
- set('tcp_name_full_row',c.full==0 and 0 or 1);set('tcp_infoblock',c.full==0 and 0 or 1)
+ set('tcp_name_full_row',c.full==0 and 0 or 1);set('tcp_infoblock',(c.full==0 or c.required) and 0 or 1)
  for i,n in ipairs({'vol','pan','info','io'}) do set('tcp_name_keep_'..n,(c.mask & (1 << (i-1)))~=0 and 1 or 0) end
  -- Show the controls independent of inherited stock-layout hide conditions.
  for _,n in ipairs({'param5','param6','param7','param8','param9','param12','param33','param34','param35','param36','param37','param40','param56','param57','param58','param59','param60','param63'}) do set(n,0) end
+ set('tcp_fx_section_mode',c.reference and 2 or 0);set('tcp_fx_section_size',1)
+ set('param14',c.reference and 0 or 4)
  sync()
 end
 local function inspect(c)
@@ -105,6 +118,18 @@ local function inspect(c)
    log('FALLBACK',tag,'Original vertical-name layout: insufficient space for the configured meters')
   elseif not keep and visible(r) then
    check(r.y>=label.y+label.h-1,tag..' late '..n..' below name',r.raw..' | '..label.raw)
+  end
+ end
+ if c.required and (cfg.width>=600 or (cfg.width>=540 and c.scale==1)) then
+  for _,n in ipairs({'tcp.volume','tcp.pan','tcp.io','tcp.fx','tcp.env'}) do
+   local r=rect(target,n)
+   check(visible(r),tag..' required two-row '..n..' visible',r.raw)
+  end
+ end
+ if c.reference and cfg.width>=540 then
+  for _,n in ipairs({'tcp.recinput','tcp.fxin'}) do
+   local r=rect(target,n)
+   check(visible(r),tag..' reference-style '..n..' visible',r.raw)
   end
  end
  no_overlap(tag)
