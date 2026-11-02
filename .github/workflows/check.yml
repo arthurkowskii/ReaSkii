@@ -23,6 +23,9 @@ jobs:
           $errors = $null
           [System.Management.Automation.Language.Parser]::ParseFile((Join-Path $PWD 'Install-ReaSkii.ps1'), [ref]$tokens, [ref]$errors) | Out-Null
           if ($errors.Count) { throw ($errors | Out-String) }
+      - name: Exercise installer in isolated sandbox
+        shell: pwsh
+        run: ./tests/test_installer.ps1 -Sandbox (Join-Path $env:RUNNER_TEMP 'reaskii-installer-qa')
       - name: Contract and upstream asset checks
         run: python3 -m unittest discover -s tests -v
       - name: Check build reproducibility

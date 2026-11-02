@@ -1,77 +1,70 @@
-# ReaSkii
+# ReaSkii 0.2.0
 
-Variante personnelle de **reARK X**, avec son apparence d'origine et trois ajouts inspirés du thème Reapertips :
+**Fonctionnement et réglages Reapertips, graphismes reARK X.** Exception voulue : la présentation reARK des plugins dans la colonne droite du TCP est conservée.
 
-- **Track name takes the whole row**, activé par défaut : le nom utilise la place disponible sur la première ligne du TCP ; les boutons d'armement et de monitoring restent accessibles.
-- Quatre options indépendantes **...but keep volume / pan / infoblock / routing button** pour garder ces éléments sur la première ligne. Elles sont désactivées par défaut, comme dans Reapertips.
-- **Smart folder indent**, activé par défaut : les niveaux de dossiers profonds prennent progressivement moins de place, dans le TCP, les enveloppes et le mixer.
+Cette version remplace le moteur reARK partiellement modifié des versions 0.1.x par le moteur WALTER de **Reapertips v1.95a Dark**. Les options de placement, masquage A/B/C, listes, enveloppes, mixer, transport et indentation viennent désormais de cette base. Les 2 892 fichiers d'art d'origine, couleurs et définitions de polices reARK sont conservés à l'identique. Aucune image ni police Reapertips n'est incluse.
 
-L'InfoBlock natif est également disponible. Activer **Use InfoBlock** avant d'utiliser **...but keep infoblock**.
+## Réglages par défaut
 
-Les layouts A/B/C et leurs variantes 100/150/200 % sont conservés. Les images, couleurs et polices viennent de reARK X, sans import d'images de Reapertips.
+- Réglages Reapertips, sauf **Track name takes the whole row** activé à la demande d'Arthur.
+- **Smart folder indent** activé ; quatre « ...but keep » désactivés comme dans Reapertips.
+- **Keep reARK FX presentation on the TCP right** activé : liste combinée native, police/marges reARK, largeur 130 px, deux colonnes maximum et rangées de 16 px à 100 %. Largeur et hauteur réglables par paliers, comme dans reARK.
+- Désactiver cette dernière option rend la gestion des listes au moteur Reapertips.
+- Le skin reARK remplace volontairement les panneaux peints et les choix de polices de Reapertips. Les contrôles de teinte de ces panneaux ne reproduisent donc pas le rendu Reapertips. Les variantes purement graphiques sans images reARK correspondantes (Solid, fader White, transport Classic) ne sont pas proposées.
+- Pour les fonctions absentes du graphisme reARK d'origine, de petits sprites originaux **P/p** (épinglé/non épinglé) et **C** (comping) sont générés, en trois états et aux trois échelles. Les connecteurs de dossiers réutilisent les images reARK, sans modifier les originaux.
 
-## Installation Windows
+Le nom pleine ligne occupe la largeur disponible hors dossiers, mètres et colonne FX. Les « keep » choisissent le placement, pas la visibilité : les masques du layout **réellement utilisé**, notamment **A**, restent applicables. Pour les deux boutons rotatifs près du nom, activer **...but keep volume** et **...but keep pan**. L'InfoBlock doit être activé pour être conservé.
 
-Décompresser le paquet de livraison, puis lancer dans PowerShell :
+## Installer ou mettre à jour sous Windows
+
+1. **Fermer REAPER**, puis décompresser `ReaSkii-v0.2.0.zip`.
+2. Dans ce dossier, lancer :
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\Install-ReaSkii.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\Install-ReaSkii.ps1 -Update
 ```
 
-Pour une installation portable, ajouter `-ResourcePath 'chemin\vers\les\ressources\REAPER'`.
+Pour REAPER portable, ajouter `-ResourcePath 'chemin\vers\les\ressources\REAPER'`. Sans `-Update`, l'installeur refuse de remplacer une installation différente.
 
-L'installation copie uniquement :
+3. Relancer REAPER, sélectionner **Options > Themes > ReaSkii**, puis ouvrir **Options > Themes > Theme adjuster** (action 42234).
+
+**Important : ouvrir l'ajusteur fait partie de cette mise à jour.** À sa première ouverture avec le moteur 0.2, il sauvegarde les valeurs mémorisées et applique les nouveaux défauts, au lieu de conserver les anciens masquages reARK. Cela ne se répète pas à chaque ouverture : les modifications personnelles suivantes sont conservées.
+
+L'installeur prévalide tous les fichiers, sauvegarde les anciens fichiers ReaSkii et `reaper-themeconfig.ini`, vérifie les copies par SHA-256 et tente un retour arrière en cas d'échec. Les sauvegardes sont dans `ReaSkii-backups/` du dossier de ressources. Il ne ferme pas REAPER, n'active pas de thème et ne modifie ni projet ni thème reARK/Reapertips original.
+
+Fichiers installés :
 
 - `ColorThemes/ReaSkii.ReaperThemeZip`
 - `Scripts/Cockos/ReaSkii_Adjuster.lua`
+- `Scripts/Cockos/ReaSkii_Defaults.lua`
+- `Scripts/Cockos/ReaSkii_ApplyDefaults.lua`
 
-Le dossier `Cockos` est imposé par la résolution de `adjuster_script` de REAPER ; le script ReaSkii n'est pas un produit de Cockos. L'installeur refuse d'écraser une version différente. Il ne change pas le thème actif, ne ferme pas REAPER et ne modifie aucun projet ni fichier de réglages.
+Le dossier `Cockos` est imposé par REAPER pour `adjuster_script` ; ces scripts ne sont pas des produits Cockos. En installation manuelle, copier **les quatre fichiers**, pas seulement le thème, puis suivre l'étape 3.
 
-Choisir ensuite **Options > Themes > ReaSkii**. Les nouvelles options sont dans **Options > Themes > Theme adjuster** (action 42234). Le bouton **Original reARK X / V6 controls...** ouvre l'ajusteur standard pour les autres réglages.
+## Ajusteur et sauvegardes
 
-Installation manuelle : copier les deux fichiers aux emplacements ci-dessus. Pour revenir en arrière, sélectionner le thème reARK X original. Aucun redémarrage n'est normalement nécessaire pour changer de thème.
+- **First row** : options usuelles et exception FX reARK.
+- **TCP / Mixer / Other / All** : paramètres complets du moteur, recherche, défilement et édition. Les masques TCP se règlent par menu explicite plutôt que par bits à deviner.
+- **Apply Reapertips / ReaSkii defaults** : remise à zéro volontaire, précédée d'une sauvegarde.
+- `ReaSkii_ApplyDefaults.lua` peut aussi être chargé dans Actions et exécuté une fois avec le thème 0.2 actif.
+- Chaque remise à zéro crée un script `ReaSkii-backups/Restore-before-defaults-*.lua`. Le charger dans Actions avec ReaSkii 0.2 actif restaure les valeurs précédentes.
+- Pour revenir à 0.1.x, fermer REAPER, restaurer les fichiers de la sauvegarde d'installation et, si nécessaire, son `reaper-themeconfig.ini`. Ce dernier contient les réglages de tous les thèmes : le restaurer annule aussi les modifications de thèmes effectuées depuis cette sauvegarde.
 
-### Mise à jour 0.1.0 vers 0.1.1
-
-L'ajusteur est inchangé. Sauvegarder le précédent `ColorThemes/ReaSkii.ReaperThemeZip` hors du dossier ColorThemes, puis le remplacer par celui du nouveau paquet. Recharger ReaSkii en sélectionnant temporairement reARK X puis ReaSkii. Les paramètres existants restent conservés. L'installeur de première installation refuse volontairement d'écraser l'ancienne version.
-
-Pour la disposition de la capture Reapertips avec les deux boutons rotatifs à droite du nom, activer **...but keep volume** et **...but keep pan**. La visibilité générale des contrôles reste réglée par l'ajusteur reARK X/V6 : les « keep » changent la rangée, pas les règles de masquage.
-
-## Comportements à connaître
-
-- Depuis 0.1.1, les marges verticales se réduisent en mode pleine ligne pour préserver deux rangées dans les pistes de 50 à 60 pixels à 100 % (hauteurs proportionnelles en HiDPI). À hauteur minimale, une seule rangée reste physiquement possible et les contrôles non conservés sont masqués.
-- Un panneau extrêmement étroit, notamment avec les très grands mètres du layout C à 200 %, conserve le repli vertical de reARK X. « Pleine ligne » signifie la largeur disponible pour les contrôles, pas la zone réservée aux mètres, aux dossiers ou à une colonne FX latérale.
-- Désactiver la nouvelle option rétablit le flux de placement de reARK X. Certains anciens cas de nom masqué dans des panneaux étroits restent caractérisés dans les tests ; ils ne sont pas introduits par le mode pleine ligne.
-- Le réglage d'indentation de base de reARK X reste appliqué. Un indent de base nul annule l'indentation, même avec Smart folder indent activé.
-
-## Développement
-
-Python 3, bibliothèque standard uniquement pour construire et lancer les tests de contrat :
+## Vérification et développement
 
 ```sh
 python3 build.py
 python3 -m unittest discover -s tests -v
 ```
 
-Le build produit `dist/ReaSkii.ReaperThemeZip` et le paquet autonome `dist/ReaSkii-v0.1.1.zip` (thème, ajusteur, installeur, documentation et manifeste SHA-256).
+Le build déterministe produit le thème et le paquet autonome avec manifeste SHA-256. `upstream/rtconfig.txt` conserve reARK ; `upstream/reapertips/rtconfig.txt` conserve le moteur de référence. `src/engine.py` applique les changements explicitement bornés ; `src/reark-skin.walter` contient le skin et l'exception FX. `src/reaskii.walter` et `tests/native.lua` restent des archives de 0.1, non utilisés par le nouveau build/harness.
 
-Le ZIP de thème est reproductible. `upstream/` conserve les règles et couleurs originales ; `src/reaskii.walter` contient les ajouts ; `build.py` applique les adaptations ciblées aux trois panneaux. Les assets sont conservés sous `theme/ReaSkii/` et vérifiés par hash.
+Les tests natifs utilisent REAPER 7.84 Linux/Xvfb dans une installation portable isolée, jamais la session quotidienne du laptop. Le runner `tests/run_native.py` utilise `tests/native_v02.lua` et écrit `qa/v02-native-*.tsv`. Il vérifie les valeurs par défaut, migration/restauration, A/B/C à 100/150/200 %, contrôles compacts, colonne FX et visibilité des labels MCP. Les contrôles essentiels sont mesurés aux hauteurs réelles de 50/58/61/65 px, pas seulement déclarés visibles dans une capture. La validation MCP ne constitue pas une couverture complète de ses contrôles ; la géométrie EnvCP n'est pas entièrement automatisée.
 
-Les tests natifs nécessitent une installation REAPER de test externe au dépôt, sous un chemin contenant `reaskii-native`, ainsi que Xvfb. Les captures et tests de souris utilisent Pillow et libXtst. Aucun exécutable ni fichier de licence REAPER n'est fourni.
+Les captures contiennent de vrais plugins JS chargés dans REAPER. Le test d'ajusteur utilise l'action standard, un vrai clic et un second processus pour vérifier la persistance. Voir `qa/VERIFICATION-v02.md` pour les résultats et limites. Ce n'est pas une validation runtime Windows.
 
-```sh
-xvfb-run -a -s '-screen 0 1800x1200x24' python3 tests/run_native.py --reaper-dir /chemin/reaskii-native/REAPER --width 960
-xvfb-run -a -s '-screen 0 1800x1200x24' python3 tests/run_native.py --reaper-dir /chemin/reaskii-native/REAPER --width 640
-xvfb-run -a -s '-screen 0 1800x1200x24' python3 tests/run_native.py --reaper-dir /chemin/reaskii-native/REAPER --width 540
-xvfb-run -a -s '-screen 0 1800x1200x24' python3 tests/run_native.py --reaper-dir /chemin/reaskii-native/REAPER --width 320
-```
+## Crédits et usage privé
 
-Les preuves de rendu et rapports natifs sont dans `qa/`. Ces tests vérifient le moteur WALTER de REAPER 7.84 sous Linux, pas une session Windows sur le laptop.
+reARK X : **ARKADATA / Pierre Daunis**. Moteur Reapertips : **Alejandro Hernandez et FeedTheCat / Ilias-Timon Poulakis**. REAPER/WALTER : **Cockos**.
 
-## Crédits et redistribution
-
-- **reARK X** : ARKADATA / Pierre Daunis, thème de base et assets.
-- **Reapertips Theme** : Alejandro Hernandez et FeedTheCat / Ilias-Timon Poulakis, référence des comportements de première ligne et d'indentation.
-- **REAPER / WALTER** : Cockos.
-
-Dépôt **privé**. reARK X est fourni sous CC BY-NC-SA 4.0, dont le fichier original est préservé dans le thème. ReaSkii est un fork non monétisé avec attribution. Cette livraison personnelle ne publie pas le projet et ne prétend pas établir les droits de tous les éléments tiers. Voir `THIRD_PARTY_NOTICES.md`.
+Dépôt privé et personnalisation personnelle, non monétisée. reARK X est sous CC BY-NC-SA 4.0 ; son fichier de licence est conservé. Les droits sur le code Reapertips sont distincts et ne sont pas assimilés à cette licence. Ne pas publier ou redistribuer ce mélange sans vérifier les autorisations applicables. Voir `THIRD_PARTY_NOTICES.md`.

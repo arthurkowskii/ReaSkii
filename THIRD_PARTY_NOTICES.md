@@ -15,9 +15,9 @@ SHA-256 : `34fe46219752245e55e3fe2c18cdee6fdba58dc91c356507bd58f70e3807f61f`.
 
 https://reapertips.com/products/reapertips-theme
 
-Le comportement de première ligne et la courbe d'indentation sont adaptés d'après l'étude du thème Reapertips v1.95a, attribué à Alejandro Hernandez et FeedTheCat (Ilias-Timon Poulakis). La courbe de profondeur et l'astuce d'arrondi float32 sont conservées. Aucun asset graphique ou police du paquet Reapertips n'est inclus.
+Le moteur WALTER complet de Reapertips v1.95a Dark, attribué à Alejandro Hernandez et FeedTheCat (Ilias-Timon Poulakis), est conservé dans `upstream/reapertips/rtconfig.txt` et utilisé depuis ReaSkii 0.2.0. Les commentaires d'attribution de la source sont préservés. Les adaptations explicites sont l'identité, les défauts du nom pleine ligne, le skin/polices reARK, la marge compacte et la présentation FX droite reARK demandée par Arthur. Aucun asset graphique ou police du paquet Reapertips n'est inclus.
 
-Les comportements ReaSkii ne constituent pas une reprise de toutes les fonctions de Reapertips ; les réglages de reARK X restent la base.
+Cette reprise de code est distincte de la licence CC BY-NC-SA du graphisme reARK : aucune licence générale de redistribution du code Reapertips n'est affirmée ici. Cette personnalisation est destinée à l'usage privé d'Arthur, qui possède les thèmes sources ; conserver le dépôt privé et ne pas distribuer publiquement ce mélange sans autorisation vérifiée. La copie source n'est pas présentée comme une création originale de ReaSkii.
 
 ## REAPER
 

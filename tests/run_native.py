@@ -5,6 +5,7 @@ The portable REAPER binary/license are external inputs, never repository assets.
 """
 import argparse
 import json
+import hashlib
 import os
 from pathlib import Path
 import shutil
@@ -19,7 +20,13 @@ def run(reaper_dir, width):
         raise ValueError('Use the isolated reaskii-native directory under Xvfb')
     (reaper_dir / 'ColorThemes').mkdir(exist_ok=True)
     shutil.copyfile(ROOT / 'dist/ReaSkii.ReaperThemeZip', reaper_dir / 'ColorThemes/ReaSkii.ReaperThemeZip')
-    shutil.copyfile(ROOT / 'tests/native.lua', reaper_dir / 'native.lua')
+    shutil.copyfile(ROOT / 'tests/native_v02.lua', reaper_dir / 'native-suite.lua')
+    (reaper_dir / 'native.lua').write_text('''local ok,err=xpcall(function() dofile(reaper.GetExePath()..'/native-suite.lua') end,debug.traceback)
+if not ok then local f=assert(io.open(reaper.GetExePath()..'/native-results.tsv','a'));f:write('ERROR\\t'..err..'\\n');f:close() end
+''')
+    (reaper_dir / 'Scripts/Cockos').mkdir(parents=True, exist_ok=True)
+    for name in ('ReaSkii_Defaults.lua', 'ReaSkii_Adjuster.lua', 'ReaSkii_ApplyDefaults.lua'):
+        shutil.copyfile(ROOT / 'scripts' / name, reaper_dir / 'Scripts/Cockos' / name)
     (reaper_dir / 'native-config.lua').write_text(f'return {{width={width}}}\n')
     ini = reaper_dir / 'reaper.ini'
     ini.write_text(f'[REAPER]\nfirst_run=0\nloadlastproj=0\nvstpath64=\nvstpath=\nwnd_w=1600\nwnd_h=1000\nleftpanewid={width}\nmixwnd_vis=0\n')
@@ -40,9 +47,14 @@ def run(reaper_dir, width):
             lines = content.splitlines()
             failures = [line for line in lines if line.startswith(('FAIL\t', 'ERROR\t'))]
             done = [line for line in lines if line.startswith('DONE\t')]
-            target = ROOT / f'qa/native-{width}.tsv'
+            target = ROOT / f'qa/v02-native-{width}.tsv'
             target.parent.mkdir(exist_ok=True)
-            target.write_text(content)
+            inputs = {'theme_sha256': reaper_dir / 'ColorThemes/ReaSkii.ReaperThemeZip',
+                      'suite_sha256': reaper_dir / 'native-suite.lua',
+                      'defaults_sha256': reaper_dir / 'Scripts/Cockos/ReaSkii_Defaults.lua'}
+            metadata = ''.join(f'META\t{name}\t{hashlib.sha256(path.read_bytes()).hexdigest()}\n'
+                               for name, path in inputs.items())
+            target.write_text(metadata + content)
             summary = {'width': width, 'done': done, 'failure_count': len(failures), 'sample_failures': failures[:15], 'report': str(target)}
             print(json.dumps(summary, indent=2))
             return bool(done) and not failures

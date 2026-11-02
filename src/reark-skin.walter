@@ -1,0 +1,140 @@
+; ReaSkii skin: use native reARK images instead of Reapertips painted panels.
+; Does not change visibility masks, first-row flow or indentation.
+; Explicit exception requested by Arthur: reARK's combined TCP FX sidebar.
+define_parameter reark_tcp_fx_sidebar 'TCP: Use reARK right-hand FX presentation' 1 0 1
+define_parameter reark_tcp_fx_size 'reARK FX: Width step (75/100/130/170/220/280/350/450)' 3 1 8
+define_parameter reark_tcp_fx_columns 'reARK FX: Maximum columns' 2 1 6
+define_parameter reark_tcp_fx_height 'reARK FX: Row height step (13/16/19/24/30)' 2 1 5
+
+macro reaskiiCompactPadding scale
+    set reaskii_min + * scale 43 1
+    set reaskii_pad / - - h 1 * 2 element_h{0} 3
+    set reaskii_pad reaskii_pad<scale scale reaskii_pad>tcp_padding{1} tcp_padding{1} reaskii_pad
+    set tcp_padding ?tcp_name_full_row h>=reaskii_min [tcp_padding{0} reaskii_pad{0}]
+endmacro
+
+macro reaskiiSidebarSecs scale
+    set reark_width reark_tcp_fx_size==1 75 reark_tcp_fx_size==2 100 reark_tcp_fx_size==3 130 reark_tcp_fx_size==4 170 reark_tcp_fx_size==5 220 reark_tcp_fx_size==6 280 reark_tcp_fx_size==7 350 450
+    set reark_width * scale reark_width
+    set side_sec_w ?reark_tcp_fx_sidebar ?supercollapsed 0 reark_width
+    set show_side_sec ?reark_tcp_fx_sidebar ?supercollapsed 0 1
+    set show_side_fx ?reark_tcp_fx_sidebar 0
+    set show_side_parms ?reark_tcp_fx_sidebar 0
+    set show_side_sends ?reark_tcp_fx_sidebar 0
+endmacro
+
+macro reaskiiSidebarDraw scale
+    set reark_margin * scale 7
+    set reark_row reark_tcp_fx_height==1 13 reark_tcp_fx_height==2 16 reark_tcp_fx_height==3 19 reark_tcp_fx_height==4 24 30
+    set reark_min_w - / - side_sec_w reark_margin reark_tcp_fx_columns reark_margin
+    set reark_list !show_side_sec [0] ?supercollapsed [0] [side_x{0} reark_margin{0}]
+    set reark_list !show_side_sec [0] ?supercollapsed [0] + reark_list [0 0 side_sec_w{0} h]
+    set reark_list !show_side_sec [0] ?supercollapsed [0] - reark_list [0 0 reark_margin{0}]
+    set reark_list !show_side_sec [0] ?supercollapsed [0] - reark_list * reark_margin 2@h
+    set tcp.fxlist ?reark_tcp_fx_sidebar [0]
+    set tcp.sendlist ?reark_tcp_fx_sidebar [0]
+    set tcp.fxparm ?reark_tcp_fx_sidebar + reark_list [0 0 0 0 1 0 1 0]
+    set tcp.fxparm.visflags ?reark_tcp_fx_sidebar [0 0 0]
+    set tcp.fxparm.font ?reark_tcp_fx_sidebar scale==1 [1 reark_row{0} reark_min_w{0} reark_list{w} -1] scale==1.5 [6 reark_row{0} reark_min_w{0} reark_list{w} -4] [11 reark_row{0} reark_min_w{0} reark_list{w} -6]
+    set tcp.fxparm.margin ?reark_tcp_fx_sidebar + [0 0 0 0 0 0 0.5] * scale [2 0 2]
+endmacro
+
+macro reaskiiSkinTcp scale
+    set tcp.custom.bg [0]
+    set tcp.custom.bg_hl1 [0]
+    set tcp.custom.bg_hl2 [0]
+    set tcp.custom.bg_sh1 [0]
+    set tcp.custom.bg_sh2 [0]
+    set tcp.custom.meter_sec_bg [0]
+    set tcp.custom.trackidx_bg [0]
+    set tcp.custom.recarm_bg [0]
+    set tcp.custom.volume_sh [0]
+    set tcp.custom.vol_bg [0]
+    set tcp.custom.name_bg [0]
+    set tcp.custom.label_flip_bg [0]
+    set tcp.custom.pan_bg [0]
+    set tcp.custom.width_bg [0]
+    set tcp.custom.track_io_text_on [0]
+    set tcp.custom.track_io_text_off [0]
+    set tcp.custom.track_io_darker [0]
+    set tcp.pan.color gl_pan_color
+    set tcp.width.color gl_width_color
+    set tcp.volume.label.color [150 150 150]
+    set tcp.pan.label.color [150 150 150]
+    set tcp.width.label.color [150 150 150]
+    set tcp.recinput.color ?track_selected [255 255 255] [225 225 225]
+    reaskiiSidebarDraw scale
+endmacro
+
+macro reaskiiSkinMasterTcp scale
+    set master.tcp.custom.meter_sec_bg [0]
+    set master.tcp.custom.volume_bg [0]
+    set master.tcp.custom.pan_bg [0]
+    set master.tcp.custom.width_bg [0]
+    set master.tcp.pan.color gl_pan_color
+    set master.tcp.width.color gl_width_color
+endmacro
+
+macro reaskiiSkinEnv scale
+    set envcp.custom.arm_bg [0]
+    set envcp.custom.tint [0]
+    set envcp.custom.indent_bg [0]
+    set envcp.label.color [184 184 184]
+    set envcp.fader.color [54 217 190]
+endmacro
+
+macro reaskiiSkinMcp scale
+    set mcp.custom.bg [0]
+    set mcp.custom.bg_hl_t [0]
+    set mcp.custom.bg_hl_r [0]
+    set mcp.custom.fx_bg [0]
+    set mcp.custom.gap [0]
+    set mcp.custom.gap_hl_t [0]
+    set mcp.custom.gap_hl_r [0]
+    set mcp.custom.stretch_bg [0]
+    set mcp.custom.sel_gradient [0]
+    set mcp.custom.label_bg [0]
+    set mcp.custom.trackidx_bg [0]
+    set mcp.custom.trackidx_bg_hl_t [0]
+    set mcp.custom.trackidx_bg_hl_r [0]
+    set mcp.custom.bot_bg [0]
+    set mcp.custom.pan_bg [0]
+    set mcp.custom.width_bg [0]
+    set mcp.custom.recarm_bg [0]
+    set mcp.custom.recinput_bg [0]
+    set mcp.custom.recinput_arrow [0]
+    set mcp.custom.recmode_bg [0]
+    set mcp.custom.recmode_arrow [0]
+    set mcp.pan.color gl_pan_color
+    set mcp.width.color gl_width_color
+    set mcp.label.color [184 184 184]
+    set mcp.recinput.color ?track_selected [225 225 225] [200 200 200]
+endmacro
+
+macro reaskiiSkinMasterMcp scale
+    set master.mcp.custom.bg [0]
+    set master.mcp.custom.fx_bg [0]
+    set master.mcp.custom.stretch_bg [0]
+    set master.mcp.custom.label_bg [0]
+    set master.mcp.custom.bot_bg [0]
+    set master.mcp.custom.pan_bg [0]
+    set master.mcp.custom.width_bg [0]
+    set master.mcp.pan.color gl_pan_color
+    set master.mcp.width.color gl_width_color
+    set master.mcp.label.color [184 184 184]
+endmacro
+
+macro reaskiiSkinTransport scale
+    set trans.custom.rate_bg [0]
+    set trans.custom.proj_div1 [0]
+    set trans.custom.proj_div2 [0]
+    set trans.custom.proj_div3 [0]
+    set trans.custom.proj_bg [0]
+    set trans.custom.auto [0]
+    set trans.custom.sel_div1 [0]
+    set trans.custom.sel_div2 [0]
+    set trans.custom.sel_div3 [0]
+    set trans.custom.sel_bg [0]
+    set trans.custom.sel_start [0]
+    set trans.custom.sel_end [0]
+endmacro

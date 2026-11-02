@@ -16,7 +16,8 @@ def run(root, reference=False):
     if 'reaskii-native' not in str(root):
         raise ValueError('Refusing a non-QA installation')
     shutil.copyfile(ROOT / 'dist/ReaSkii.ReaperThemeZip', root / 'ColorThemes/ReaSkii.ReaperThemeZip')
-    shutil.copyfile(ROOT / 'scripts/ReaSkii_Adjuster.lua', root / 'Scripts/Cockos/ReaSkii_Adjuster.lua')
+    for name in ('ReaSkii_Adjuster.lua', 'ReaSkii_Defaults.lua', 'ReaSkii_ApplyDefaults.lua'):
+        shutil.copyfile(ROOT / 'scripts' / name, root / 'Scripts/Cockos' / name)
     (root / 'visual-config.lua').write_text('return {reference=' + ('true' if reference else 'false') + '}\n')
     shutil.copyfile(ROOT / 'tests/visual_fixture.lua', root / 'visual.lua')
     (root / 'reaper-themeconfig.ini').unlink(missing_ok=True)
@@ -48,7 +49,7 @@ def run(root, reference=False):
             raise RuntimeError('Adjuster did not open')
         display.focus(own[0])
         time.sleep(0.3)
-        ImageGrab.grab().crop((0, 0, 570, 455)).save(ROOT / ('qa/adjuster-reference.png' if reference else 'qa/adjuster-defaults.png'))
+        ImageGrab.grab().crop((0, 0, 720, 670)).save(ROOT / ('qa/adjuster-reference.png' if reference else 'qa/adjuster-defaults.png'))
         print('Saved actual REAPER theme and default-adjuster screenshots')
     finally:
         display.close()

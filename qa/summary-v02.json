@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "engine": "Reapertips v1.95a Dark",
+  "runtime": "REAPER 7.84 Linux/Xvfb",
+  "inputs": {
+    "theme_sha256": "d7d1760e600a3e30dcf63a5a68e29b2cfd9a6c7194c69fd4863bb5951d7d3460",
+    "suite_sha256": "85447606ea51e74f69dfc37289584873c2e9d8df92b946ddb41db67008e183c8",
+    "defaults_sha256": "aad592c0e285057282fed9c368d6f59c4fd83d214d81bd5e138abc39f9f7d223"
+  },
+  "reports": [
+    {
+      "width": 960,
+      "tcp_cases": 207,
+      "assertions": 20096,
+      "failures": 0,
+      "factory_parameters": 191,
+      "required_rectangles": 60,
+      "report_sha256": "7d4c12dae3f337fdb8ddbc600482e15bca3946f60a0e834a8000b2c62506389f"
+    },
+    {
+      "width": 640,
+      "tcp_cases": 108,
+      "assertions": 8973,
+      "failures": 0,
+      "factory_parameters": 191,
+      "required_rectangles": 60,
+      "report_sha256": "cec1feeaa3bfbd5330e3346a93f79779dc626f7ad29156dcdd8326d390217447"
+    },
+    {
+      "width": 540,
+      "tcp_cases": 108,
+      "assertions": 8542,
+      "failures": 0,
+      "factory_parameters": 191,
+      "required_rectangles": 60,
+      "report_sha256": "5254ed7515b40439b7f57d40cf45e0920d457f71bfedcd6a33413b71cd287741"
+    },
+    {
+      "width": 320,
+      "tcp_cases": 108,
+      "assertions": 5104,
+      "failures": 0,
+      "factory_parameters": 191,
+      "required_rectangles": 0,
+      "report_sha256": "6b094cd818bc1b1aee40f3ff680852d6976426289af9522998ed34e8c3fda546"
+    }
+  ],
+  "tcp_cases": 531,
+  "assertions": 42715,
+  "required_rectangles": 180,
+  "failures": 0,
+  "original_reark_assets": 2892
+}

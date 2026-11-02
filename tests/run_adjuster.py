@@ -32,7 +32,8 @@ def run(root):
     if 'reaskii-native' not in str(root):
         raise ValueError('Refusing non-QA installation')
     (root / 'Scripts/Cockos').mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(ROOT / 'scripts/ReaSkii_Adjuster.lua', root / 'Scripts/Cockos/ReaSkii_Adjuster.lua')
+    for name in ('ReaSkii_Adjuster.lua', 'ReaSkii_Defaults.lua', 'ReaSkii_ApplyDefaults.lua'):
+        shutil.copyfile(ROOT / 'scripts' / name, root / 'Scripts/Cockos' / name)
     shutil.copyfile(ROOT / 'tests/adjuster_smoke.lua', root / 'adjuster-smoke.lua')
     shutil.copyfile(ROOT / 'dist/ReaSkii.ReaperThemeZip', root / 'ColorThemes/ReaSkii.ReaperThemeZip')
     # Do not inherit plugin paths written by the previous portable QA process.

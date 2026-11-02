@@ -1,0 +1,15 @@
+PASS: fresh installation hash
+PASS: script installed: ReaSkii_Adjuster.lua
+PASS: script installed: ReaSkii_Defaults.lua
+PASS: script installed: ReaSkii_ApplyDefaults.lua
+PASS: identical install is idempotent
+PASS: different install refused without -Update
+PASS: refusal preserves existing bytes
+PASS: explicit update installs current bytes
+PASS: old version backed up byte-for-byte
+PASS: live settings untouched
+PASS: incomplete package refused before writes
+PASS: incomplete package leaves installed theme unchanged
+PASS: directory collision refused in preflight
+PASS: directory collision causes no partial installation
+DONE: parser and installer sandbox checks passed (PowerShell host, not Windows REAPER runtime)

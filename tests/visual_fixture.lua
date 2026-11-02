@@ -4,7 +4,7 @@ assert(reaper.OpenColorThemeFile(r..'/ColorThemes/ReaSkii.ReaperThemeZip'))
 local params={}
 for i=0,1000 do local n,_,_,default=reaper.ThemeLayout_GetParameter(i);if not n or n=='' then break end;reaper.ThemeLayout_SetParameter(i,default,false);params[n]=i end
 if cfg.reference then
- for name,value in pairs({tcp_name_keep_vol=1,tcp_name_keep_pan=1,tcp_fx_section_mode=2,tcp_fx_section_size=1,param6=0,param12=0,param14=0}) do
+ for name,value in pairs({tcp_name_keep_vol=1,tcp_name_keep_pan=1,param6=0,param12=0,param14=0}) do
   assert(reaper.ThemeLayout_SetParameter(assert(params[name]),value,false))
  end
 end
@@ -14,10 +14,21 @@ for i,name in ipairs(names) do
  reaper.GetSetMediaTrackInfo_String(tr,'P_NAME',name,true)
  reaper.GetSetMediaTrackInfo_String(tr,'P_TCP_LAYOUT','A',true)
  reaper.GetSetMediaTrackInfo_String(tr,'P_MCP_LAYOUT','A',true)
- reaper.SetMediaTrackInfo_Value(tr,'I_HEIGHTOVERRIDE',i%2==1 and 50 or 58)
+ reaper.SetMediaTrackInfo_Value(tr,'I_HEIGHTOVERRIDE',cfg.reference and i==3 and 180 or (i%2==1 and 50 or 58))
  reaper.SetMediaTrackInfo_Value(tr,'I_FOLDERDEPTH',i<#names and 1 or -(#names-1))
  reaper.SetTrackColor(tr,reaper.ColorToNative(85+15*i,120+5*i,150))
 end
+for i=0,6 do
+ local tr=reaper.GetTrack(0,i)
+ assert(reaper.TrackFX_AddByName(tr,'JS: utility/volume',false,-1)>=0)
+ if i==0 then assert(reaper.TrackFX_AddByName(tr,'JS: utility/volume_pan',false,-1)>=0);assert(reaper.TrackFX_AddByName(tr,'JS: utility/volume',false,-1)>=0) end
+end
+if cfg.reference then
+ reaper.SetOnlyTrackSelected(reaper.GetTrack(0,2))
+ assert(reaper.kbd_getTextFromCmd(42430,0):lower():find('lane'))
+ reaper.Main_OnCommand(42430,0)
+end
+if reaper.GetToggleCommandState(40302)==0 then reaper.Main_OnCommand(40302,0) end
 if reaper.kbd_getTextFromCmd(40406,0):lower():find('volume') then
  reaper.SetOnlyTrackSelected(reaper.GetTrack(0,2));reaper.Main_OnCommand(40406,0)
 end
