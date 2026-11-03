@@ -1,0 +1,98 @@
+REFERENCE_PARITY	NOT_MEASURED
+SHA256	scripts/midi/ReaSkii_MIDI_PanelRecovery.lua	b2c47dd737c8bfc37e76d05da84eb8248d2a4e5d20bb8657f72ce0fec508215a
+SHA256	scripts/midi/ReaSkii_MIDI_PanelFeatures.lua	f93178a5d67edba2416bca162deb2422d250b53a2cdf01092d33bb1ab6b4c444
+SHA256	scripts/midi/ReaSkii_MIDI_PanelController.lua	bbe7994e217c9046b3627ac6521b86c6f2c1ae2da4228cddad446232dffe20e1
+SHA256	scripts/midi/ReaSkii_MIDI_PanelOperations.lua	25e122270260adf4c98407e500c13586466a845363c663289b30ede3621dd4f2
+SHA256	scripts/midi/ReaSkii_MIDI_PanelContext.lua	2b40cf9bf174af3bcfb90078ce364412fe4b66ebfafff1e8d91ebe60b8f3268e
+SHA256	scripts/midi/ReaSkii_MIDI_Panel.lua	c97cba0792885db79a6b6a4944097e622c6b44349e5b638f9a3650ba413f7352
+SHA256	scripts/midi/ReaSkii_MIDI_PanelUI.lua	c3fa6ea3c6fc6755ebe2659923e559703f26bae844ff96317271a393ed6d8565
+SHA256	scripts/midi/ReaSkii_MIDI_Core.lua	d3321c063390d54fcacfd0eaa5c67f21876d26bb83cd77615e32fdf34dc880fb
+SHA256	scripts/midi/ReaSkii_MIDI_Adapter.lua	c97e9fd37db6a0bd9c118c065f521727affeb5ad44cc2f3cd1210a109f39cbea
+SHA256	scripts/midi/ReaSkii_MIDI_Transformations.lua	31665c9cf124694bcb021b57e32734c7f705b2b37dfaa6bdf06fd9766841c0e4
+SHA256	scripts/midi/ReaSkii_MIDI_Generators.lua	8dde99ae594a02ac7ef2a584e90a83093918232cbe58cd3de9f7f71f3fc91b71
+SHA256	tests/midi_expansion_gui.lua	1a4e930b557169c6abe38bb4eea2411ce7279ef5365f9c341f6eda46502d22d1
+SHA256	tests/run_midi_expansion_quantize_gui.py	d4cf69c86dd07d09fe6d06b08db049386aa2895b5ff073e219f60a1cbe555975
+SHA256	tests/run_midi_fidelity_gui.py	8542dc86951fc8e3289a63d356c1e034ec815a4c7069eadfe82f9762fc347a69
+SHA256	tests/x11_gui.py	cb5079e09cc482c4dd28160850a6f47558e5af863d2d183ed0a52304627cee4d
+SHA256	qa/midi-expansion-quantize-stacks.png	6a575fb8cecef207bb0f2c0916b665ede20c932e54dd0e7834b8836e0ee8a8d7
+SHA256	qa/midi-expansion-quantize-velocity_shaper.png	5c2a2c670b909ee2bcfa0e6ea7fb27e01e508f0c5ecb155a5d42e8edd8222476
+SHA256	qa/midi-expansion-quantize-connect.png	5355307c52229fc8edd38b572697872974e29210b10a3d294519ec024ff31219
+SHA256	qa/midi-expansion-quantize-seed.png	b79d83e9589c32087fe0fc51b04e547937f539b006d044daa84d739207be5cd4
+SHA256	qa/midi-expansion-quantize-rhythm.png	fdc9a474ae0ac297c99b7ffb16b394987899da3880e8bc27fffa616a5e288448
+SHA256	qa/midi-expansion-quantize-external.png	5f0bac58118872eaa3a5d63f9d94de2f558fa687750fcff65d0947f3d84a8107
+SHA256	qa/midi-expansion-quantize-last.png	e6a977bcf91a968471b21406170b079c3d659e2fce6d09443e95dfcb76dc5fe6
+SHA256	qa/midi-expansion-quantize-end-triplets.png	20d02574e252095126f19a01847b429fc0bbe1f5194d7b6e246b88530e4d1672
+SHA256	qa/midi-expansion-quantize-panel.png	215ceff0e4c362ffea47fc74acbe80420552c9fafe41bc1dc7e045fd18638b48
+SHA256	qa/midi-expansion-quantize-shape.png	f0b90f758c452a4b33b61bf4d6f21c48c10fdf60e0a9a88162e709ea4b9f9bc4
+SHA256	qa/midi-expansion-quantize-pitch.png	8087ac833e086fcd046a50d59b09436a50031cea2d8f01ed2a0ef070f69adcf2
+SHA256	qa/midi-expansion-quantize-euclidean.png	74dc23a72615daff407ea0c49b365db4521c46ab2f99133f9d7b1558de19bd1d
+PASS	real native fixture selected notes
+PASS	arpeggiate native Transform committed
+PASS	arpeggiate real MIDI changed
+PASS	arpeggiate native Undo restores pre-transform fixture
+PASS	chop native Transform committed
+PASS	chop real MIDI changed
+PASS	chop native Undo restores pre-transform fixture
+PASS	connect native Transform committed
+PASS	connect real MIDI changed
+PASS	connect native Undo restores pre-transform fixture
+PASS	ornament native Transform committed
+PASS	ornament real MIDI changed
+PASS	ornament native Undo restores pre-transform fixture
+PASS	quantize native Transform committed
+PASS	quantize native Undo restores pre-transform fixture
+PASS	recombine native Transform committed
+PASS	recombine real MIDI changed
+PASS	recombine native Undo restores pre-transform fixture
+PASS	span native Transform committed
+PASS	span real MIDI changed
+PASS	span native Undo restores pre-transform fixture
+PASS	strum native Transform committed
+PASS	strum real MIDI changed
+PASS	strum native Undo restores pre-transform fixture
+PASS	velocity_shaper native Transform committed
+PASS	velocity_shaper real MIDI changed
+PASS	velocity_shaper native Undo restores pre-transform fixture
+PASS	real X11 transformation chooser selects inline panel
+PASS	inline numeric Auto creates native preview
+PASS	Auto off cancels native preview
+PASS	real velocity envelope endpoint drag previews
+PASS	Cancel restores envelope preview
+PASS	Auto-off Apply Stretch works
+PASS	Apply Stretch native Undo
+PASS	Add Interval native inline action
+PASS	Set Length native inline action
+PASS	Humanize native inline action
+PASS	Transpose native inline action
+PASS	rhythm empty native clip baseline
+PASS	rhythm native Generate empty clip
+PASS	rhythm native Undo empty clip
+PASS	euclidean empty native clip baseline
+PASS	euclidean native Generate empty clip
+PASS	euclidean native Undo empty clip
+PASS	seed empty native clip baseline
+PASS	seed native Generate empty clip
+PASS	seed native Undo empty clip
+PASS	shape empty native clip baseline
+PASS	shape native Generate empty clip
+PASS	shape native Undo empty clip
+PASS	stacks empty native clip baseline
+PASS	stacks native Generate empty clip
+PASS	stacks native Undo empty clip
+PASS	generator Auto preview empty clip
+PASS	generator Auto off restores empty clip
+PASS	explicit replace generates inside range
+PASS	native offset/playrate source PPQ conversion
+PASS	Quantize Auto OFF toggles do not write
+PASS	Quantize End-only keeps start and snaps end in native MIDI
+PASS	Quantize End-only native Undo restores exact notes
+PASS	Quantize Amount 50% inline updates native end from original
+PASS	Quantize Auto OFF cancels end preview
+PASS	Quantize musical triplet meter maps to native PPQ
+PASS	Quantize Start+End toggles both from snapshot
+PASS	Quantize both-edge Cancel restores baseline
+PASS	external edit Escape refuses restore, retains session
+PASS	native close preserves external edit
+PASS	external conflict recovery retained
+PASS	native piano roll remains open
+DONE	69

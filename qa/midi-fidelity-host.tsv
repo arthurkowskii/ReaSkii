@@ -1,0 +1,32 @@
+SHA256	scripts/midi/ReaSkii_MIDI_Panel.lua	4c49fe84bf0a39ce0cc7072314953914fd0b49edd1767cb1205bcb4cb4f9ef95
+SHA256	scripts/midi/ReaSkii_MIDI_PanelController.lua	99b9cdd82c87137f40cfc50c13587100bfd6e3916b16a4f925216152bdcae830
+SHA256	scripts/midi/ReaSkii_MIDI_PanelUI.lua	9fe60c22e6ac391c5169851b37a79d073c3570ef4d821794009b49d13d7abef5
+SHA256	tests/midi_fidelity_unit.lua	e94bd3b7a5a09c3a66bfeb79dcb588f656d309c7686e317960acbff56612748f
+SHA256	tests/midi_fidelity_gui.lua	0ec194521822825760bd751256dcc6094cf9f65ea5b78311f1b234580914a6b9
+SHA256	tests/run_midi_fidelity_gui.py	8542dc86951fc8e3289a63d356c1e034ec815a4c7069eadfe82f9762fc347a69
+SHA256	qa/midi-fidelity-panel.png	088a5b17855d5633718a999356f91ebcac49a95fa7a39e6a249b99980e7d802e
+SHA256	qa/midi-fidelity-collapsed.png	8824f3d2a6d25e9340d2f86268ac01e6974ca09d2ef6ee656574b344d7c4041f
+SHA256	qa/midi-fidelity-small.png	88a9de93c850ddb0891f42199ad1cac7f0998bf334b32e0667b369de8e601af8
+REFERENCE_PARITY	NOT_MEASURED
+PASS	selected chord baseline
+PASS	Stretch rotary vertical drag previews factor 1.20 in MIDI
+PASS	Cancel restores knob preview
+PASS	Shift fine rotary drag factor 1.02
+PASS	inline Stretch number commits without modal
+PASS	inline Escape cancels text only
+PASS	Strum upper endpoint drag changes chord timing
+PASS	Strum re-preview is noncumulative
+PASS	inline Tension changes real middle-note timing nonlinearly
+PASS	Auto off restores original timing
+PASS	Auto off graph adjusts parameters without MIDI write
+PASS	Transform commits intended Strum with Auto off
+PASS	Reset params preserves committed MIDI
+PASS	post-commit Stretch preview uses committed baseline
+PASS	Cancel after commit preserves committed baseline
+PASS	section collapse and small-window scroll exercised (screenshots)
+PASS	preview before native close
+PASS	native close / atexit restores only pending preview
+PASS	native piano roll remains open
+PASS	clean close removed recovery journal
+PASS	native Undo reverses Transform commit
+DONE	21

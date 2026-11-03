@@ -1,0 +1,67 @@
+REFERENCE_PARITY	NOT_MEASURED
+SHA256	/home/randomaccessmemories/.hermes/cache/scratch/lua54_run.py	7fdf3ef961c2bfe01847aae3a0e8d7a381878b2785cb49fce21ea120aa99c48b
+SHA256	scripts/midi/ReaSkii_MIDI_Adapter.lua	c97e9fd37db6a0bd9c118c065f521727affeb5ad44cc2f3cd1210a109f39cbea
+SHA256	scripts/midi/ReaSkii_MIDI_Core.lua	d3321c063390d54fcacfd0eaa5c67f21876d26bb83cd77615e32fdf34dc880fb
+SHA256	scripts/midi/ReaSkii_MIDI_Generators.lua	8dde99ae594a02ac7ef2a584e90a83093918232cbe58cd3de9f7f71f3fc91b71
+SHA256	scripts/midi/ReaSkii_MIDI_Panel.lua	c97cba0792885db79a6b6a4944097e622c6b44349e5b638f9a3650ba413f7352
+SHA256	scripts/midi/ReaSkii_MIDI_PanelContext.lua	2b40cf9bf174af3bcfb90078ce364412fe4b66ebfafff1e8d91ebe60b8f3268e
+SHA256	scripts/midi/ReaSkii_MIDI_PanelController.lua	bbe7994e217c9046b3627ac6521b86c6f2c1ae2da4228cddad446232dffe20e1
+SHA256	scripts/midi/ReaSkii_MIDI_PanelFeatures.lua	f93178a5d67edba2416bca162deb2422d250b53a2cdf01092d33bb1ab6b4c444
+SHA256	scripts/midi/ReaSkii_MIDI_PanelOperations.lua	25e122270260adf4c98407e500c13586466a845363c663289b30ede3621dd4f2
+SHA256	scripts/midi/ReaSkii_MIDI_PanelRecovery.lua	b2c47dd737c8bfc37e76d05da84eb8248d2a4e5d20bb8657f72ce0fec508215a
+SHA256	scripts/midi/ReaSkii_MIDI_PanelUI.lua	c3fa6ea3c6fc6755ebe2659923e559703f26bae844ff96317271a393ed6d8565
+SHA256	scripts/midi/ReaSkii_MIDI_Transformations.lua	31665c9cf124694bcb021b57e32734c7f705b2b37dfaa6bdf06fd9766841c0e4
+SHA256	tests/midi_expansion_context.lua	72c6c7e89868dee4b9b7a12ff38e28c2ccb4cc37b73c021c4c2587c12a58cb44
+SHA256	tests/midi_expansion_gui.lua	1a4e930b557169c6abe38bb4eea2411ce7279ef5365f9c341f6eda46502d22d1
+SHA256	tests/midi_expansion_integration.lua	d293d381fb45e33ab9e57c32434da7afff39a95379c845a1a6a63789cf66b62d
+SHA256	tests/midi_expansion_operations.lua	feac50049f4d28c9a0bb60dfb02afdf94265175dac25b1eec5b8eb203332c293
+SHA256	tests/midi_expansion_quantize.lua	e29fc97aed9eaaec0397f5bedf2052ea94198ce40a66be1aaff4977383631d1a
+SHA256	tests/midi_expansion_safety.lua	216a7ef2f3418384753d2269c824e6273a5165a1604c0c0488787217d73e16fa
+SHA256	tests/run_midi_expansion_quantize_unit.py	7deee6ae34b36f9ed0b4eca6a56958f0313c5ddcbba96b28c0318ed1f6a189d4
+SUITE	midi_expansion_context.lua
+PASS	native source PPQ conversion used for offset/playrate context
+PASS	no-overlap time selection falls back to item
+DONE	2
+SUITE	midi_expansion_integration.lua
+PASS	all inline transformation dispatch paths preserve cancel snapshot
+PASS	all generators support empty, preview cancel and explicit commit
+PASS	new pitch actions and Auto-off Stretch commit
+PASS	add collision refusal, explicit replace and zero-note replacement protection
+PASS	journal preserved on external selection-only edit and explicitly archived
+PASS	failed host write retains retryable session; parameter value rolls back
+PASS	actual UI pitch buttons and non-Auto Stretch application
+PASS	actual UI numeric Auto wheel and Transform lifecycle
+PASS	actual entrypoint Escape and explicit conflict archive preserve external MIDI
+PASS	fine wheel accumulates substeps on integer parameters
+PASS	all seven panel entrypoints/helpers compile
+DONE	11
+SUITE	midi_expansion_operations.lua
+PASS	Add interval duplicates, preserves source and release
+PASS	Set length uses explicit ticks
+PASS	Humanize deterministic and duration-preserving
+PASS	Connect fills gap at full density
+PASS	Ornament flam and grace position
+PASS	Recombine mirror pitch and rotate velocity
+PASS	Span articulation rules
+PASS	Velocity envelope interpolates
+PASS	Pitch overflow, same-channel overlaps, negative time refused
+DONE	9
+SUITE	midi_expansion_quantize.lua
+PASS	Quantize start-only moves with duration preserved
+PASS	Quantize end-only stretches with unchanged start and release
+PASS	Quantize both and proportional Amount
+PASS	No flags and zero Amount are exact no-ops
+PASS	Unselected untouched; collapsed durations and collisions refused
+PASS	Controller meter, triplets and independent note edge options
+PASS	Adapter retains CC refusals and terminal release ordering
+PASS	Dedicated UI matches official control inventory and dispatch
+DONE	8
+SUITE	midi_expansion_safety.lua
+PASS	baseline anchor frozen across repeated Stretch
+PASS	switch tool cancels before acquiring fresh context
+PASS	failed adjustment rolls back displayed value
+PASS	cancel failure retains recoverable session
+PASS	target switch cannot write new target in same gesture
+PASS	external edit poll retains failed cancellation
+PASS	marker note-offs precede CC123 at same tick
+DONE	7

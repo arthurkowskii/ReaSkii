@@ -1,0 +1,31 @@
+local D='scripts/midi/'
+local C=dofile(D..'ReaSkii_MIDI_Core.lua'); local A=dofile(D..'ReaSkii_MIDI_Adapter.lua')
+local T=dofile(D..'ReaSkii_MIDI_Transformations.lua'); local G=dofile(D..'ReaSkii_MIDI_Generators.lua')
+local O=dofile(D..'ReaSkii_MIDI_PanelOperations.lua'); local P=dofile(D..'ReaSkii_MIDI_PanelController.lua')
+A.configure({C=C,T=O.wrap(T),G=G})
+local count=0
+local function test(n,f) f(); count=count+1; print('PASS\t'..n) end
+local function note(s,e,p,v) return {startppq=s,endppq=e,pitch=p or 60,vel=v or 100,channel=0,selected=true,muted=false,release_velocity=20,source={on_id=1}} end
+local notes={note(100,200,60),note(500,600,64)}
+test('Add interval duplicates, preserves source and release',function() local r=O.apply(notes,'add_interval',{amount=7}); assert(#r==4 and r[3].pitch==67 and r[3].release_velocity==20 and notes[1].pitch==60) end)
+test('Set length uses explicit ticks',function() local r=O.apply(notes,'set_length',{length=50}); assert(r[1].endppq==150) end)
+test('Humanize deterministic and duration-preserving',function() local p={amount=50,grid_ppq=50,seed=3}; local a=O.apply(notes,'humanize',p); local b=O.apply(notes,'humanize',p); assert(a[1].startppq==b[1].startppq and a[1].endppq-a[1].startppq==100) end)
+test('Connect fills gap at full density',function() local r=O.apply(notes,'connect',{rate_ppq=100,density=100,tie=0,spread=0,seed=1}); assert(#r==5 and r[3].startppq==200 and r[5].endppq==500) end)
+test('Ornament flam and grace position',function()
+ local r=O.apply(notes,'ornament',{position=50,grid_ppq=100,kind='flam',velocity=50}); assert(#r==4 and r[1].startppq==150 and r[3].vel==50)
+ local g=O.apply(notes,'ornament',{position=-50,grid_ppq=100,kind='grace',count=2,pitch_delta=1,velocity=80}); assert(#g==6 and g[3].startppq==50 and g[3].pitch==61)
+end)
+test('Recombine mirror pitch and rotate velocity',function()
+ local r=O.apply(notes,'recombine',{dimension='pitch',mirror=true,rotate=0}); assert(r[1].pitch==64 and r[2].pitch==60)
+ local n={note(0,100,60,80),note(200,300,62,90)}; r=O.apply(n,'recombine',{dimension='velocity',rotate=1}); assert(r[1].vel==90)
+end)
+test('Span articulation rules',function()
+ local p={articulation='legato',range_end=1000,grid_ppq=100,offset=0,variation=0}; local r=O.apply(notes,'span',p); assert(r[1].endppq==500 and r[2].endppq==1000)
+ p.articulation='staccato'; r=O.apply(notes,'span',p); assert(r[1].endppq==300)
+end)
+test('Velocity envelope interpolates',function() local r=O.apply(notes,'velocity_shaper',{range_start=100,range_end=900,loops=1,rotate=0,grid_ppq=100,first=0,middle=100,last=0,minimum=1,maximum=127}); assert(r[1].vel==1 and r[2].vel==127) end)
+test('Pitch overflow, same-channel overlaps, negative time refused',function()
+ assert(not pcall(O.apply,notes,'add_interval',{amount=100})); assert(not pcall(O.apply,{note(100,200,60),note(500,600,60)},'set_length',{length=1000}))
+ assert(not pcall(O.apply,notes,'ornament',{position=-100,grid_ppq=240,kind='flam',velocity=50}))
+end)
+print('DONE\t'..count)

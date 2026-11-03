@@ -1,0 +1,88 @@
+REFERENCE_PARITY	NOT_MEASURED
+SHA256	scripts/midi/ReaSkii_MIDI_PanelRecovery.lua	b2c47dd737c8bfc37e76d05da84eb8248d2a4e5d20bb8657f72ce0fec508215a
+SHA256	scripts/midi/ReaSkii_MIDI_PanelFeatures.lua	246770ca60c64a424783b42b7506d6dd0f1699874f5aa7860c62bcedcc67ec98
+SHA256	scripts/midi/ReaSkii_MIDI_PanelController.lua	bbe7994e217c9046b3627ac6521b86c6f2c1ae2da4228cddad446232dffe20e1
+SHA256	scripts/midi/ReaSkii_MIDI_PanelOperations.lua	42bedfab836836acecd3e5dab03d30ccfccee1cb85a03e7d1026382a757f987a
+SHA256	scripts/midi/ReaSkii_MIDI_PanelContext.lua	2b40cf9bf174af3bcfb90078ce364412fe4b66ebfafff1e8d91ebe60b8f3268e
+SHA256	scripts/midi/ReaSkii_MIDI_Panel.lua	c97cba0792885db79a6b6a4944097e622c6b44349e5b638f9a3650ba413f7352
+SHA256	scripts/midi/ReaSkii_MIDI_PanelUI.lua	17a5608fbb194f08a4010941e3804a621e9cc4c7457ceb9d4760002e24398017
+SHA256	scripts/midi/ReaSkii_MIDI_Core.lua	d3321c063390d54fcacfd0eaa5c67f21876d26bb83cd77615e32fdf34dc880fb
+SHA256	scripts/midi/ReaSkii_MIDI_Adapter.lua	c97e9fd37db6a0bd9c118c065f521727affeb5ad44cc2f3cd1210a109f39cbea
+SHA256	scripts/midi/ReaSkii_MIDI_Transformations.lua	31665c9cf124694bcb021b57e32734c7f705b2b37dfaa6bdf06fd9766841c0e4
+SHA256	scripts/midi/ReaSkii_MIDI_Generators.lua	8dde99ae594a02ac7ef2a584e90a83093918232cbe58cd3de9f7f71f3fc91b71
+SHA256	tests/midi_expansion_gui.lua	1a4e930b557169c6abe38bb4eea2411ce7279ef5365f9c341f6eda46502d22d1
+SHA256	tests/run_midi_expansion_gui.py	8e515993f7a88d0339c74a5df95ba02f407fff2b10914f82033f88920c7fef2e
+SHA256	tests/run_midi_fidelity_gui.py	8542dc86951fc8e3289a63d356c1e034ec815a4c7069eadfe82f9762fc347a69
+SHA256	tests/x11_gui.py	cb5079e09cc482c4dd28160850a6f47558e5af863d2d183ed0a52304627cee4d
+SHA256	qa/midi-expansion-stacks.png	6a575fb8cecef207bb0f2c0916b665ede20c932e54dd0e7834b8836e0ee8a8d7
+SHA256	qa/midi-expansion-velocity_shaper.png	5c2a2c670b909ee2bcfa0e6ea7fb27e01e508f0c5ecb155a5d42e8edd8222476
+SHA256	qa/midi-expansion-external.png	1600b15e981ebd89f1bff9f7dda8027a355a41df185e8a4bf93a85bae9fcdf2b
+SHA256	qa/midi-expansion-seed.png	b79d83e9589c32087fe0fc51b04e547937f539b006d044daa84d739207be5cd4
+SHA256	qa/midi-expansion-last.png	021c0772b4ef8c255255854b5f46fd04fbe24723e740ed63a51f16ae067c4939
+SHA256	qa/midi-expansion-shape.png	f0b90f758c452a4b33b61bf4d6f21c48c10fdf60e0a9a88162e709ea4b9f9bc4
+SHA256	qa/midi-expansion-pitch.png	8087ac833e086fcd046a50d59b09436a50031cea2d8f01ed2a0ef070f69adcf2
+SHA256	qa/midi-expansion-rhythm.png	fdc9a474ae0ac297c99b7ffb16b394987899da3880e8bc27fffa616a5e288448
+SHA256	qa/midi-expansion-connect.png	5355307c52229fc8edd38b572697872974e29210b10a3d294519ec024ff31219
+SHA256	qa/midi-expansion-euclidean.png	74dc23a72615daff407ea0c49b365db4521c46ab2f99133f9d7b1558de19bd1d
+PASS	real native fixture selected notes
+PASS	arpeggiate native Transform committed
+PASS	arpeggiate real MIDI changed
+PASS	arpeggiate native Undo restores pre-transform fixture
+PASS	chop native Transform committed
+PASS	chop real MIDI changed
+PASS	chop native Undo restores pre-transform fixture
+PASS	connect native Transform committed
+PASS	connect real MIDI changed
+PASS	connect native Undo restores pre-transform fixture
+PASS	ornament native Transform committed
+PASS	ornament real MIDI changed
+PASS	ornament native Undo restores pre-transform fixture
+PASS	quantize native Transform committed
+PASS	quantize native Undo restores pre-transform fixture
+PASS	recombine native Transform committed
+PASS	recombine real MIDI changed
+PASS	recombine native Undo restores pre-transform fixture
+PASS	span native Transform committed
+PASS	span real MIDI changed
+PASS	span native Undo restores pre-transform fixture
+PASS	strum native Transform committed
+PASS	strum real MIDI changed
+PASS	strum native Undo restores pre-transform fixture
+PASS	velocity_shaper native Transform committed
+PASS	velocity_shaper real MIDI changed
+PASS	velocity_shaper native Undo restores pre-transform fixture
+PASS	real X11 transformation chooser selects inline panel
+PASS	inline numeric Auto creates native preview
+PASS	Auto off cancels native preview
+PASS	real velocity envelope endpoint drag previews
+PASS	Cancel restores envelope preview
+PASS	Auto-off Apply Stretch works
+PASS	Apply Stretch native Undo
+PASS	Add Interval native inline action
+PASS	Set Length native inline action
+PASS	Humanize native inline action
+PASS	Transpose native inline action
+PASS	rhythm empty native clip baseline
+PASS	rhythm native Generate empty clip
+PASS	rhythm native Undo empty clip
+PASS	euclidean empty native clip baseline
+PASS	euclidean native Generate empty clip
+PASS	euclidean native Undo empty clip
+PASS	seed empty native clip baseline
+PASS	seed native Generate empty clip
+PASS	seed native Undo empty clip
+PASS	shape empty native clip baseline
+PASS	shape native Generate empty clip
+PASS	shape native Undo empty clip
+PASS	stacks empty native clip baseline
+PASS	stacks native Generate empty clip
+PASS	stacks native Undo empty clip
+PASS	generator Auto preview empty clip
+PASS	generator Auto off restores empty clip
+PASS	explicit replace generates inside range
+PASS	native offset/playrate source PPQ conversion
+PASS	external edit Escape refuses restore, retains session
+PASS	native close preserves external edit
+PASS	external conflict recovery retained
+PASS	native piano roll remains open
+DONE	61

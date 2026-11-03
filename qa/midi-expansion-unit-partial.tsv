@@ -1,0 +1,8 @@
+SUITE	midi_expansion_context.lua
+PASS	native source PPQ conversion used for offset/playrate context
+PASS	no-overlap time selection falls back to item
+DONE	2
+SUITE	midi_expansion_integration.lua
+PASS	all inline transformation dispatch paths preserve cancel snapshot
+PASS	all generators support empty, preview cancel and explicit commit
+...emories/GIT/ReaSkii/tests/midi_expansion_integration.lua:41: set_length

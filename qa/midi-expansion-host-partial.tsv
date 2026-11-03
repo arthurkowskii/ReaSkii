@@ -1,0 +1,61 @@
+PASS	real native fixture selected notes
+PASS	arpeggiate native Transform committed
+PASS	arpeggiate real MIDI changed
+PASS	arpeggiate native Undo restores pre-transform fixture
+PASS	chop native Transform committed
+PASS	chop real MIDI changed
+PASS	chop native Undo restores pre-transform fixture
+PASS	connect native Transform committed
+PASS	connect real MIDI changed
+PASS	connect native Undo restores pre-transform fixture
+PASS	ornament native Transform committed
+PASS	ornament real MIDI changed
+PASS	ornament native Undo restores pre-transform fixture
+PASS	quantize native Transform committed
+PASS	quantize native Undo restores pre-transform fixture
+PASS	recombine native Transform committed
+PASS	recombine real MIDI changed
+PASS	recombine native Undo restores pre-transform fixture
+PASS	span native Transform committed
+PASS	span real MIDI changed
+PASS	span native Undo restores pre-transform fixture
+PASS	strum native Transform committed
+PASS	strum real MIDI changed
+PASS	strum native Undo restores pre-transform fixture
+PASS	velocity_shaper native Transform committed
+PASS	velocity_shaper real MIDI changed
+PASS	velocity_shaper native Undo restores pre-transform fixture
+PASS	real X11 transformation chooser selects inline panel
+PASS	inline numeric Auto creates native preview
+PASS	Auto off cancels native preview
+PASS	real velocity envelope endpoint drag previews
+PASS	Cancel restores envelope preview
+PASS	Auto-off Apply Stretch works
+PASS	Apply Stretch native Undo
+PASS	Add Interval native inline action
+PASS	Set Length native inline action
+PASS	Humanize native inline action
+PASS	Transpose native inline action
+PASS	rhythm empty native clip baseline
+PASS	rhythm native Generate empty clip
+PASS	rhythm native Undo empty clip
+PASS	euclidean empty native clip baseline
+PASS	euclidean native Generate empty clip
+PASS	euclidean native Undo empty clip
+PASS	seed empty native clip baseline
+PASS	seed native Generate empty clip
+PASS	seed native Undo empty clip
+PASS	shape empty native clip baseline
+PASS	shape native Generate empty clip
+PASS	shape native Undo empty clip
+PASS	stacks empty native clip baseline
+PASS	stacks native Generate empty clip
+PASS	stacks native Undo empty clip
+PASS	generator Auto preview empty clip
+PASS	generator Auto off restores empty clip
+PASS	explicit replace generates inside range
+PASS	native offset/playrate source PPQ conversion
+PASS	external edit Escape refuses restore, retains session
+PASS	native close preserves external edit
+PASS	external conflict recovery retained
+PASS	native piano roll remains open
