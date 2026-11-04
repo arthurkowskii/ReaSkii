@@ -1,6 +1,7 @@
 param(
     [string]$ResourcePath = (Join-Path $env:APPDATA 'REAPER'),
-    [switch]$Update
+    [switch]$Update,
+    [switch]$ToolsOnly
 )
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -20,14 +21,21 @@ if ($null -eq $manifest -and (Test-Path -LiteralPath (Join-Path $root 'build.py'
 # Key = package-relative path, which is also its key in manifest.json.
 # Folder = destination under the REAPER resource directory.
 # Repo = where to look when running from a repository checkout instead of the package.
-$specs = @(
-    @{Key='ReaSkii.ReaperThemeZip';    Folder='ColorThemes';     Repo='dist'},
-    @{Key='ReaSkii_Adjuster.lua';      Folder='Scripts\Cockos';  Repo='scripts'},
-    @{Key='ReaSkii_Defaults.lua';      Folder='Scripts\Cockos';  Repo='scripts'},
-    @{Key='ReaSkii_ApplyDefaults.lua'; Folder='Scripts\Cockos';  Repo='scripts'},
+# -ToolsOnly installs the MIDI tools and nothing else: no theme, no adjuster, no theme settings.
+$tools = @(
     @{Key='ReaSkii_RegisterTools.lua'; Folder='Scripts\ReaSkii'; Repo='scripts'},
     @{Key='effects/ReaSkii/ReaSkii MIDI LFO.jsfx'; Folder='Effects\ReaSkii'; Repo=$null}
 )
+$specs = if ($ToolsOnly) {
+    $tools
+} else {
+    @(
+        @{Key='ReaSkii.ReaperThemeZip';    Folder='ColorThemes';     Repo='dist'},
+        @{Key='ReaSkii_Adjuster.lua';      Folder='Scripts\Cockos';  Repo='scripts'},
+        @{Key='ReaSkii_Defaults.lua';      Folder='Scripts\Cockos';  Repo='scripts'},
+        @{Key='ReaSkii_ApplyDefaults.lua'; Folder='Scripts\Cockos';  Repo='scripts'}
+    ) + $tools
+}
 foreach ($group in @('midi', 'device')) {
     $folder = Join-Path (Join-Path $root 'scripts') $group
     if (-not (Test-Path -LiteralPath $folder -PathType Container)) { throw "Missing package folder: scripts/$group" }
@@ -72,7 +80,7 @@ if ($changed.Count) {
         }
     }
     $settings = Join-Path $ResourcePath 'reaper-themeconfig.ini'
-    if (Test-Path -LiteralPath $settings -PathType Leaf) { [IO.File]::Copy($settings, (Join-Path $backup 'reaper-themeconfig.ini'), $false) }
+    if (-not $ToolsOnly -and (Test-Path -LiteralPath $settings -PathType Leaf)) { [IO.File]::Copy($settings, (Join-Path $backup 'reaper-themeconfig.ini'), $false) }
     $written = @()
     try {
         foreach ($f in $changed) {
@@ -92,7 +100,12 @@ if ($changed.Count) {
     Write-Output "Backup: $backup"
 }
 foreach ($f in $files) { [pscustomobject]@{Path=$f.Target; SHA256=(Get-FileHash -Algorithm SHA256 -LiteralPath $f.Target).Hash} }
-Write-Output ("Installed {0} file(s), {1} updated." -f $files.Count, $changed.Count)
-Write-Output 'Installed without activating the theme. Select Options > Themes > ReaSkii, then open Theme adjuster.'
-Write-Output 'Tools: run Scripts\ReaSkii\ReaSkii_RegisterTools.lua once from the Action List to declare the MIDI Panel and Device Rack actions.'
-Write-Output 'The adjuster applies new defaults once, with another restore backup. No project or original reARK/Reapertips theme was modified.'
+if ($ToolsOnly) {
+    Write-Output ("Installed {0} tool file(s), {1} updated. No theme, no adjuster, no theme settings touched." -f $files.Count, $changed.Count)
+    Write-Output 'Run Scripts\ReaSkii\ReaSkii_RegisterTools.lua once from the Action List to declare the MIDI Panel and Device Rack actions.'
+} else {
+    Write-Output ("Installed {0} file(s), {1} updated." -f $files.Count, $changed.Count)
+    Write-Output 'Installed without activating the theme. Select Options > Themes > ReaSkii, then open Theme adjuster.'
+    Write-Output 'Tools: run Scripts\ReaSkii\ReaSkii_RegisterTools.lua once from the Action List to declare the MIDI Panel and Device Rack actions.'
+    Write-Output 'The adjuster applies new defaults once, with another restore backup. No project or original reARK/Reapertips theme was modified.'
+}

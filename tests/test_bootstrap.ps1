@@ -30,4 +30,15 @@ New-Item -ItemType Directory -Path $bad | Out-Null
 $badZip=Join-Path $Sandbox ('no-manifest-' + [guid]::NewGuid().ToString('N') + '.zip')
 Compress-Archive -Path (Join-Path $bad '*') -DestinationPath $badZip
 MustThrow { & $bootstrap -ResourcePath $resource -Package $badZip } 'package without manifest refused'
+
+$toolsZip=@(Get-ChildItem -LiteralPath (Join-Path $repo 'dist') -Filter 'ReaSkii-Tools-v*.zip' -File | Sort-Object Name | Select-Object -Last 1)[0].FullName
+Check (Test-Path -LiteralPath $toolsZip -PathType Leaf) 'tools package available'
+$toolsResource=Join-Path $Sandbox ([guid]::NewGuid().ToString('N'))
+New-Item -ItemType Directory -Path $toolsResource | Out-Null
+[IO.File]::WriteAllText((Join-Path $toolsResource 'reaper.ini'),'[REAPER]')
+$outTools=& $bootstrap -ResourcePath $toolsResource -Package $toolsZip -ToolsOnly
+Check ([bool](@($outTools) -match '^ReaSkii tools \d')) 'bootstrap reports the tools package'
+Check (Test-Path -LiteralPath (Join-Path $toolsResource 'Scripts/ReaSkii/midi/ReaSkii_MIDI_Panel.lua') -PathType Leaf) 'bootstrap tools-only installs the MIDI panel'
+Check (Test-Path -LiteralPath (Join-Path $toolsResource 'Effects/ReaSkii/ReaSkii MIDI LFO.jsfx') -PathType Leaf) 'bootstrap tools-only installs the JSFX'
+Check (-not (Test-Path -LiteralPath (Join-Path $toolsResource 'ColorThemes'))) 'bootstrap tools-only installs no theme'
 Write-Output 'DONE: bootstrap checks passed (PowerShell host, not Windows REAPER runtime)'

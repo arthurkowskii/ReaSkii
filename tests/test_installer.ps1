@@ -70,6 +70,22 @@ foreach ($group in @('midi','device')) { Copy-Item -LiteralPath (Join-Path $repo
 $message=$null
 try { & (Join-Path $checkout 'Install-ReaSkii.ps1') -ResourcePath $resource } catch { $message=$_.Exception.Message }
 Check ($message -match 'python3 build\.py') 'checkout without a built package points to build.py'
+# Tools-only mode must leave the theme, the adjuster and the theme settings alone.
+$toolsResource=Join-Path $Sandbox ([guid]::NewGuid().ToString('N'))
+New-Item -ItemType Directory -Path $toolsResource | Out-Null
+[IO.File]::WriteAllText((Join-Path $toolsResource 'reaper.ini'),'[REAPER]')
+[IO.File]::WriteAllText((Join-Path $toolsResource 'reaper-themeconfig.ini'),'[Original-theme]keep=1')
+$settingsBefore=(Get-FileHash -LiteralPath (Join-Path $toolsResource 'reaper-themeconfig.ini')).Hash
+& $installer -ResourcePath $toolsResource -ToolsOnly | Out-Null
+Check (-not (Test-Path -LiteralPath (Join-Path $toolsResource 'ColorThemes'))) 'tools-only installs no theme'
+Check (-not (Test-Path -LiteralPath (Join-Path $toolsResource 'Scripts/Cockos'))) 'tools-only installs no adjuster'
+Check (Test-Path -LiteralPath (Join-Path $toolsResource 'Scripts/ReaSkii/midi/ReaSkii_MIDI_Panel.lua') -PathType Leaf) 'tools-only installs the MIDI panel'
+Check (Test-Path -LiteralPath (Join-Path $toolsResource 'Effects/ReaSkii/ReaSkii MIDI LFO.jsfx') -PathType Leaf) 'tools-only installs the JSFX'
+Check ((Get-FileHash -LiteralPath (Join-Path $toolsResource 'reaper-themeconfig.ini')).Hash -eq $settingsBefore) 'tools-only leaves theme settings untouched'
+Check (@(Get-ChildItem -LiteralPath (Join-Path $toolsResource 'ReaSkii-backups') -Filter 'reaper-themeconfig.ini' -Recurse -ErrorAction SilentlyContinue).Count -eq 0) 'tools-only backs up no theme settings'
+$countBefore=@(Get-ChildItem -LiteralPath (Join-Path $toolsResource 'Scripts/ReaSkii') -Recurse -File).Count
+& $installer -ResourcePath $toolsResource -ToolsOnly | Out-Null
+Check (@(Get-ChildItem -LiteralPath (Join-Path $toolsResource 'Scripts/ReaSkii') -Recurse -File).Count -eq $countBefore) 'tools-only install is idempotent'
 # Manifest integrity: a packaged file that the manifest does not list must be refused before any write.
 $zip=if ($PackageZip) {$PackageZip} else {@(Get-ChildItem -LiteralPath (Join-Path $repo 'dist') -Filter 'ReaSkii-v*.zip' -File | Sort-Object Name | Select-Object -Last 1)[0].FullName}
 Check (Test-Path -LiteralPath $zip -PathType Leaf) "built package available for manifest checks ($zip)"

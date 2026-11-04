@@ -4,7 +4,7 @@
 
 Voir [le cadrage du pack](docs/PACK-DIRECTION.md) pour les fonctionnalités visées, les limites et les garde-fous. **Le pack MIDI complet n'est pas encore implémenté.** Un [premier laboratoire MIDI](docs/MIDI-LAB.md) ajoute un panneau compagnon au piano roll natif : transposition, vélocité et Strum linéaire avec aperçu réversible. Il n'est pas encore comparé aux sorties MIDI d'Ableton.
 
-La livraison **0.3.0** contient le thème 0.2.0 **et** les outils : panneau MIDI, device rack, script d'enregistrement des actions. L'installeur copie tout ; un script dédié déclare les actions, une fois par machine.
+La livraison **0.4.0** contient le thème 0.2.0 et les outils, en deux paquets : le complet (thème, ajusteur, panneau MIDI, device rack) et les outils seuls, sans thème ni ajusteur. L'installeur copie tout ; un script dédié déclare les actions, une fois par machine.
 
 ## Thème 0.2.0 existant
 
@@ -41,6 +41,14 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubus
 ```
 
 La commande prend la dernière release publiée, vérifie le manifeste SHA-256 et installe avec `-Update`. Le numéro de version s'affiche avant l'installation. `Get-ReaSkii.ps1 -Package 'D:\ReaSkii.zip'` fonctionne hors ligne, depuis une clé USB.
+
+**Outils seuls, sans thème ni ajusteur** (panneau MIDI et device rack) :
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/arthurkowskii/ReaSkii/main/Get-ReaSkiiTools.ps1 | iex"
+```
+
+Ce paquet fait moins de 100 Ko au lieu de 7,3 Mo. Il ne touche ni `ColorThemes`, ni les scripts d'ajusteur, ni `reaper-themeconfig.ini`. C'est la version à donner à quelqu'un qui utilise déjà Reapertips ou un autre thème. En local : `Install-ReaSkiiTools.ps1 -Update`, ou `Install-ReaSkii.ps1 -ToolsOnly`.
 
 Installation manuelle :
 

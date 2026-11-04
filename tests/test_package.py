@@ -16,7 +16,7 @@ import build  # noqa: E402  (needs ROOT on sys.path)
 RELEASE = ROOT / f'dist/ReaSkii-v{build.VERSION}.zip'
 ROOT_ENTRIES = {'ReaSkii.ReaperThemeZip', 'ReaSkii_Adjuster.lua', 'ReaSkii_Defaults.lua',
                 'ReaSkii_ApplyDefaults.lua', 'ReaSkii_RegisterTools.lua',
-                'Install-ReaSkii.ps1', 'Get-ReaSkii.ps1', 'README.md',
+                'Install-ReaSkii.ps1', 'Get-ReaSkii.ps1', 'Get-ReaSkiiTools.ps1', 'README.md',
                 'THIRD_PARTY_NOTICES.md'}
 
 
@@ -50,6 +50,7 @@ class DeliveryPackage(unittest.TestCase):
     def test_manifest_covers_every_entry_with_matching_hashes(self):
         self.assertEqual(self.manifest['version'], build.VERSION)
         self.assertEqual(self.manifest['theme_version'], build.THEME_VERSION)
+        self.assertEqual(self.manifest['package'], 'full')
         self.assertEqual(set(self.manifest['sha256']), self.entries - {'manifest.json'})
         for name, digest in self.manifest['sha256'].items():
             self.assertEqual(digest, hashlib.sha256(self.package.read(name)).hexdigest(), name)
@@ -61,6 +62,46 @@ class DeliveryPackage(unittest.TestCase):
     def test_every_tool_script_on_disk_is_shipped(self):
         shipped = {name for name in self.entries if name.startswith('scripts/')}
         self.assertEqual(shipped, tool_entries())
+
+
+class ToolsPackage(unittest.TestCase):
+    """The tools-only package: no theme, no adjuster, identical tool bytes."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.release = ROOT / f'dist/ReaSkii-Tools-v{build.VERSION}.zip'
+        if not cls.release.exists():
+            raise unittest.SkipTest(f'{cls.release.name} absent: run python3 build.py first')
+        cls.package = zipfile.ZipFile(cls.release)
+        cls.entries = set(cls.package.namelist())
+        cls.manifest = json.loads(cls.package.read('manifest.json'))
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.package.close()
+
+    def test_archive_lists_exactly_the_expected_payload(self):
+        expected = ({'ReaSkii_RegisterTools.lua', 'Install-ReaSkii.ps1', 'Install-ReaSkiiTools.ps1',
+                     'Get-ReaSkii.ps1', 'Get-ReaSkiiTools.ps1'}
+                    | set(build.DOCS) | tool_entries() | effect_entries())
+        self.assertEqual(self.entries, expected | {'manifest.json'})
+
+    def test_manifest_is_a_tools_manifest(self):
+        self.assertEqual(self.manifest['package'], 'tools')
+        self.assertNotIn('theme_version', self.manifest)
+        self.assertEqual(self.manifest['version'], build.VERSION)
+        self.assertEqual(set(self.manifest['sha256']), self.entries - {'manifest.json'})
+        for name, digest in self.manifest['sha256'].items():
+            self.assertEqual(digest, hashlib.sha256(self.package.read(name)).hexdigest(), name)
+
+    def test_tool_bytes_match_the_full_package(self):
+        with zipfile.ZipFile(RELEASE) as full:
+            for name in tool_entries() | effect_entries():
+                self.assertEqual(self.package.read(name), full.read(name), name)
+
+    def test_carries_no_theme_and_no_adjuster(self):
+        self.assertEqual([name for name in self.entries if name.endswith('.ReaperThemeZip')], [])
+        self.assertNotIn('ReaSkii_Adjuster.lua', self.entries)
 
 
 if __name__ == '__main__':
