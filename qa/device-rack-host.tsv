@@ -1,0 +1,31 @@
+REFERENCE_PARITY	NOT_MEASURED
+SHA256	scripts/device/ReaSkii_DeviceRackModel.lua	6c9ca8093f33cd49abda7e73bccbb4b63a863f408b7369699c07f5cd2b15d490
+SHA256	scripts/device/ReaSkii_DeviceRack.lua	c31e8d31b5e6bbd541e4149899f6ada8a6600e28d32743f131565042f9c01986
+SHA256	scripts/device/ReaSkii_DeviceRackUI.lua	74bb285e57fa088938d0b09c2d0b12bd983399d8faba1c51488e13751cfac198
+SHA256	scripts/device/ReaSkii_DeviceRackStore.lua	1c14618651ba38d7c5c8c4a933e62cb0e91b25ff157d45de892365d973370f63
+SHA256	scripts/device/ReaSkii_DeviceRackController.lua	244089506ce8774c7d9c6003552c0bde47a797bc34feae97f1bbcff1154664a8
+SHA256	effects/ReaSkii/ReaSkii MIDI LFO.jsfx	d193a3458c501d0ecf00ab3d147e3935658dc9d62f97b4009aca926e15e9de76
+SHA256	tests/device_rack_gui.lua	357d10795bdac2f4ef37f49ff19a23de9ce1a2f730364d10e6ed4183da7ebc3e
+SHA256	tests/run_device_rack_gui.py	235f83e1252a75b6c9ec9e2dcd9d3be7925e9403c89d4725fcf665bab8e455f5
+SHA256	tests/run_midi_fidelity_gui.py	8542dc86951fc8e3289a63d356c1e034ec815a4c7069eadfe82f9762fc347a69
+SHA256	tests/x11_gui.py	cb5079e09cc482c4dd28160850a6f47558e5af863d2d183ed0a52304627cee4d
+SHA256	qa/device-rack-lfo.png	ffead93395d268e8b63c8f725d315bbe0d4a9c3993ed2ce7a93686eee58aa998
+SHA256	qa/device-rack-tree.png	e6a4a72c3f77c2b0855be7799382620f2379a1ccc577de7ac51be389ecf1e828
+SHA256	qa/device-rack-configured.png	2bd0d22902c40dae2d8791942691c7b9223ef975fc1dff74d05b9298899aa5d9
+SHA256	qa/device-rack-last.png	affad1619e84d7a3dd058c6b51fa81c31cb4dc13ee60525029a9b36f142c8e7b
+SHA256	qa/device-rack-preview.png	ba16c7aa4f274cc620e27af921fd2781c1b8852d25abe4393e064a4c75ed2b8b
+SHA256	qa/device-rack-configure.png	ad713c88ac39ee76df2868cae74fc9251964290baa437d69b5ab223d48dde11a
+SHA256	qa/device-rack-initial.png	8988304d9817ffdae00111be1e153099ba29256b55f87594fe9a823e54366998
+PASS	real selected track exposed
+PASS	real FX chain listed
+PASS	panel has usable real window geometry
+PASS	Configure mode opens by real click
+PASS	real parameter row adds a preview control
+PASS	Done returns to previews
+PASS	real slider drag writes FX parameter
+PASS	wheel changes FX parameter
+PASS	Shift wheel is finer
+PASS	chain card selects second device
+PASS	Add MIDI LFO inserts and selects real JSFX
+PASS	no selected track handled without FX selection
+DONE	12

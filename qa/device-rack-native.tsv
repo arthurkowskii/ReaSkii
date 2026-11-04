@@ -1,0 +1,22 @@
+SHA256	scripts/device/ReaSkii_DeviceRackModel.lua	6c9ca8093f33cd49abda7e73bccbb4b63a863f408b7369699c07f5cd2b15d490
+SHA256	scripts/device/ReaSkii_DeviceRack.lua	c31e8d31b5e6bbd541e4149899f6ada8a6600e28d32743f131565042f9c01986
+SHA256	scripts/device/ReaSkii_DeviceRackUI.lua	74bb285e57fa088938d0b09c2d0b12bd983399d8faba1c51488e13751cfac198
+SHA256	scripts/device/ReaSkii_DeviceRackStore.lua	1c14618651ba38d7c5c8c4a933e62cb0e91b25ff157d45de892365d973370f63
+SHA256	scripts/device/ReaSkii_DeviceRackController.lua	244089506ce8774c7d9c6003552c0bde47a797bc34feae97f1bbcff1154664a8
+SHA256	effects/ReaSkii/ReaSkii MIDI LFO.jsfx	96f8ec5834e9d36656c5487527f3cf673da3a2b73bfbb8df6eda397576a9940a
+SHA256	tests/device_rack_native.lua	1f976572cc77aa4e5e906c1211f0215037dd4d4a2749beee511145f8b2a8538d
+SHA256	tests/run_device_rack_native.py	b171585cfb55bd15d348a40dfa470096130e94c692d334a271fd3c31a2582448
+PASS	MIDI LFO inserted as real JSFX
+PASS	JSFX name read back
+PASS	JSFX exposes at least nine parameters: 12
+PASS	JSFX parameter names are stable
+PASS	second real effect inserted
+PASS	controller selects the real track and first FX
+PASS	configuration controls added
+PASS	configuration persisted in the project
+PASS	real parameter write verified
+PASS	FX selection switches
+PASS	MIDI LFO insert path works after selection
+PASS	undo removes the inserted LFO without removing existing devices
+PASS	new controller reloads saved configuration
+DONE	13

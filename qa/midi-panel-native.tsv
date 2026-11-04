@@ -1,0 +1,43 @@
+META	scripts/midi/ReaSkii_MIDI_Core.lua	d3321c063390d54fcacfd0eaa5c67f21876d26bb83cd77615e32fdf34dc880fb
+META	scripts/midi/ReaSkii_MIDI_Tools.lua	d6f010cdd451dde4f603cbe21fbd4a9f5a9529f58bfe762884f3e0b6b2a8f655
+META	tests/midi_panel_native.lua	f35ebba723e885f05d1b124ed0d9f46a41287b967c6896937010ff8c6974a084
+META	tests/midi_panel_regressions.lua	be6221d4499a221cbf2df005ae7ecfb136d76cbb7dcd101f0d7638f42ad57064
+PASS	transpose note-on and note-off
+PASS	preserve release velocity
+PASS	identity is byte-exact
+PASS	velocity delta
+PASS	velocity does not change release velocity
+PASS	unselected notes untouched
+PASS	out-of-range pitch refused, not clipped
+PASS	timing transform refuses expression data
+PASS	linear strum spans one grid step
+PASS	strum keeps note ends
+PASS	strum identity
+PASS	random velocity is reproducible
+PASS	random seed affects result
+PASS	source snapshot immutable
+PASS	preview writes native take
+PASS	preview recalculates from original, not previous preview
+PASS	cancel restores byte-exact MIDI
+PASS	apply creates named undo step
+PASS	undo restores original MIDI
+PASS	external MIDI edit detected
+PASS	conflict never overwrites external edit
+DONE	21
+PASS	overlapping same-pitch notes no longer abort a take
+PASS	overlapping notes keep their own release velocities
+PASS	no-op velocity is byte exact
+PASS	selection-only pitch edit
+PASS	unterminated note is ignored
+PASS	program change survives velocity and transpose
+PASS	pitch edit allowed with CC present
+PASS	timing edit still refuses CC
+PASS	abandon keeps an external edit and frees the panel
+PASS	external edit is preserved by abandon
+PASS	recovery restores an interrupted preview
+PASS	recovery is byte exact
+PASS	recovery is consumed once
+PASS	the crash simulation had a real pending change
+PASS	recovery refuses a take edited elsewhere
+PASS	refused recovery never overwrites external edit
+DONE	16

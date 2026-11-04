@@ -1,0 +1,12 @@
+PASS	real selected track exposed
+PASS	real FX chain listed
+PASS	panel has usable real window geometry
+PASS	Configure mode opens by real click
+PASS	real parameter row adds a preview control
+PASS	Done returns to previews
+PASS	real slider drag writes FX parameter
+PASS	wheel changes FX parameter
+PASS	Shift wheel is finer
+PASS	chain card selects second device
+PASS	Add MIDI LFO inserts and selects real JSFX
+PASS	no selected track handled without FX selection

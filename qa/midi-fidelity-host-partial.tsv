@@ -1,0 +1,21 @@
+PASS	selected chord baseline
+PASS	Stretch rotary vertical drag previews factor 1.20 in MIDI
+PASS	Cancel restores knob preview
+PASS	Shift fine rotary drag factor 1.02
+PASS	inline Stretch number commits without modal
+PASS	inline Escape cancels text only
+PASS	Strum upper endpoint drag changes chord timing
+PASS	Strum re-preview is noncumulative
+PASS	inline Tension changes real middle-note timing nonlinearly
+PASS	Auto off restores original timing
+PASS	Auto off graph adjusts parameters without MIDI write
+PASS	Transform commits intended Strum with Auto off
+PASS	Reset params preserves committed MIDI
+PASS	post-commit Stretch preview uses committed baseline
+PASS	Cancel after commit preserves committed baseline
+PASS	section collapse and small-window scroll exercised (screenshots)
+PASS	preview before native close
+PASS	native close / atexit restores only pending preview
+PASS	native piano roll remains open
+PASS	clean close removed recovery journal
+PASS	native Undo reverses Transform commit

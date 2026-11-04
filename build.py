@@ -44,6 +44,11 @@ def build():
             raise ValueError(f'No tool script found in scripts/{group}')
         for source in sources:
             payload[f'scripts/{group}/{source.name}'] = source.read_bytes()
+    effects = sorted((ROOT / 'effects').rglob('*.jsfx'))
+    if not effects:
+        raise ValueError('No JSFX found in effects/')
+    for effect in effects:
+        payload[f'effects/{effect.relative_to(ROOT / "effects").as_posix()}'] = effect.read_bytes()
     for name in ('Install-ReaSkii.ps1', 'Get-ReaSkii.ps1', 'README.md', 'THIRD_PARTY_NOTICES.md'):
         payload[name] = (ROOT / name).read_bytes()
     manifest = {'version': VERSION, 'theme_version': THEME_VERSION,

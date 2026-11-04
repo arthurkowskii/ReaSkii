@@ -38,6 +38,8 @@ foreach ($group in @('midi','device')) {
  }
 }
 Check ($toolCount -ge 2) "tool groups are not empty ($toolCount scripts)"
+$lfo=Join-Path $resource 'Effects/ReaSkii/ReaSkii MIDI LFO.jsfx'
+Check ((Get-FileHash -LiteralPath $lfo).Hash -eq (Get-FileHash -LiteralPath (Join-Path $repo 'effects/ReaSkii/ReaSkii MIDI LFO.jsfx')).Hash) 'MIDI LFO JSFX installed'
 $before=@(Get-ChildItem -LiteralPath (Join-Path $resource 'ReaSkii-backups') -Directory).Count
 & $installer -ResourcePath $resource | Out-Null
 Check (@(Get-ChildItem -LiteralPath (Join-Path $resource 'ReaSkii-backups') -Directory).Count -eq $before) 'identical install is idempotent'

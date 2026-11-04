@@ -26,6 +26,11 @@ def tool_entries():
             for path in (ROOT / 'scripts' / group).glob('*.lua')}
 
 
+def effect_entries():
+    return {f'effects/{path.relative_to(ROOT / "effects").as_posix()}'
+            for path in (ROOT / 'effects').rglob('*.jsfx')}
+
+
 class DeliveryPackage(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -40,7 +45,7 @@ class DeliveryPackage(unittest.TestCase):
         cls.package.close()
 
     def test_archive_lists_exactly_the_expected_payload(self):
-        self.assertEqual(self.entries, ROOT_ENTRIES | tool_entries() | {'manifest.json'})
+        self.assertEqual(self.entries, ROOT_ENTRIES | tool_entries() | effect_entries() | {'manifest.json'})
 
     def test_manifest_covers_every_entry_with_matching_hashes(self):
         self.assertEqual(self.manifest['version'], build.VERSION)

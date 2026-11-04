@@ -1,0 +1,39 @@
+META	scripts/midi/ReaSkii_MIDI_Tools.lua	d6f010cdd451dde4f603cbe21fbd4a9f5a9529f58bfe762884f3e0b6b2a8f655
+META	scripts/midi/ReaSkii_MIDI_Adapter.lua	c97e9fd37db6a0bd9c118c065f521727affeb5ad44cc2f3cd1210a109f39cbea
+META	scripts/midi/ReaSkii_MIDI_Generators.lua	8dde99ae594a02ac7ef2a584e90a83093918232cbe58cd3de9f7f71f3fc91b71
+META	scripts/midi/ReaSkii_MIDI_Transformations.lua	31665c9cf124694bcb021b57e32734c7f705b2b37dfaa6bdf06fd9766841c0e4
+META	scripts/midi/ReaSkii_MIDI_Core.lua	d3321c063390d54fcacfd0eaa5c67f21876d26bb83cd77615e32fdf34dc880fb
+META	tests/midi_transformations_unit.lua	078ffc3ccbc90dc9ca631b053acbab3bf5fae19661290df3cb8eef975827be61
+META	tests/midi_generators_unit.lua	65ab5edb42f011d00f1556d56f47e127bbae9cf31049a4f73ff1024025474647
+META	tests/midi_adapter_unit.lua	25d435f1e40bdfeff750e978e81d733362c93271a54a5e877c384749cd15a66c
+META	tests/midi_syntax_unit.lua	1e3ab89c53d37dca69e1b5929a95faad2fe29c830d6479bead945458f3fea241
+META	tests/midi_modules_native.lua	e408d58d943ddbbc8f986bb2663e36555ea304e75f24f57668b2a3e13a2a32f1
+INFO	midi_transformations_unit.lua	PASS transformations: 124 assertions
+PASS	midi_transformations_unit.lua
+INFO	midi_generators_unit.lua	ok rhythm fills one range with density steps
+INFO	midi_generators_unit.lua	ok rhythm density and seed control the pattern
+INFO	midi_generators_unit.lua	ok rhythm repeats and clips at range_end
+INFO	midi_generators_unit.lua	ok rhythm rejects invalid parameters
+INFO	midi_generators_unit.lua	ok euclidean matches canonical E(3,8) and E(5,8)
+INFO	midi_generators_unit.lua	ok euclidean rotation delays hits modulo steps
+INFO	midi_generators_unit.lua	ok euclidean defaults and edge pulses
+INFO	midi_generators_unit.lua	ok euclidean rejects invalid parameters
+INFO	midi_generators_unit.lua	ok seed fills a grid deterministically
+INFO	midi_generators_unit.lua	ok seed density and different seeds change the result
+INFO	midi_generators_unit.lua	ok seed honours the optional scale
+INFO	midi_generators_unit.lua	ok seed rejects invalid parameters
+INFO	midi_generators_unit.lua	ok note_fields are copied and validated
+INFO	midi_generators_unit.lua	ok shape line, sine and triangle follow documented levels
+INFO	midi_generators_unit.lua	ok shape quantizes to the scale and handles one step
+INFO	midi_generators_unit.lua	ok shape rejects invalid parameters
+INFO	midi_generators_unit.lua	ok stacks lays chords end to end and preserves velocities
+INFO	midi_generators_unit.lua	ok stacks clips, skips and copies extra fields
+INFO	midi_generators_unit.lua	ok stacks rejects invalid chords and limits expansion
+INFO	midi_generators_unit.lua	ok all generators respect the note contract and isolation
+INFO	midi_generators_unit.lua	ok generate rejects unknown tools and bad arguments
+INFO	midi_generators_unit.lua	21 tests passed
+PASS	midi_generators_unit.lua
+PASS	midi_adapter_unit.lua
+INFO	midi_syntax_unit.lua	PASS MIDI syntax: 5 modules
+PASS	midi_syntax_unit.lua
+DONE	4

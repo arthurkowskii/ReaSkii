@@ -1,0 +1,23 @@
+Observed red/green checkpoints from actual Lua 5.4 execution in this worker:
+
+1. Before adapter creation:
+command: python3 /home/randomaccessmemories/.hermes/cache/scratch/lua54_run.py tests/midi_mpe_integration_unit.lua
+exit 1: cannot open tests/../scripts/midi/ReaSkii_MIDI_MPEAdapter.lua: No such file or directory
+
+2. Release-coincident terminal source marker regression (after initial implementation):
+same command, exit 1:
+tests/midi_mpe_integration_unit.lua:9: terminal CC123 at release remains final after reset
+Fixed final marker tie ordering inside owned adapter; regression remains.
+
+3. Master-channel pedal attribution regression:
+same command, exit 1:
+tests/midi_mpe_integration_unit.lua:9: expected refusal MPE: nil
+Fixed master CC pedal/channel-mode attribution inside owned adapter; regression remains.
+
+4. Native attempt (isolated unique scratch config and xvfb-run):
+exit 1, runner raised Native REAPER exited before completion.
+Actual run.log: /usr/bin/xvfb-run: 200: /home/randomaccessmemories/.hermes/cache/scratch/reaskii-native/reaper_linux_x86_64/REAPER/reaper: not found
+Native executable path and containing reaskii-native directory absent. Follow-up existing-executable search returned NO_EXISTING_REAPER_EXECUTABLE. No install attempted.
+Runner subsequently gained an explicit missing-executable preflight and durable BLOCKED result (exit 2), after executing pure tests.
+
+Final current green pure counts, exact tested file hashes and command arguments are in midi-mpe-integration-results.tsv. This narrative is not native proof.

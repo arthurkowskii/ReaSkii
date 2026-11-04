@@ -1,0 +1,65 @@
+desc:ReaSkii MIDI LFO
+// Original ReaSkii MIDI CC LFO. Not a copy of Ableton's LFO.
+// Emits one CC value per audio block while transport is playing.
+slider1:1<0.01,20,0.01>Free Rate (Hz)
+slider2:0<0,3,1{Sine,Triangle,Square,Random}>Shape
+slider3:0<0,1,1{Free,Sync}>Time Base
+slider4:2<1,6,1{1/1,1/2,1/4,1/8,1/16,1/32}>Division
+slider5:1<1,16,1>Channel
+slider6:1<0,127,1>CC
+slider7:64<0,127,1>Center
+slider8:100<0,100,1>Depth (%)
+slider9:1<0,1,1{Off,On}>Enable
+
+@init
+phase=0;
+held=0;
+rng=22222;
+last= -1;
+wasPlaying=0;
+
+function shapeValue(kind, t) local v;
+  kind==0 ? v=sin(t*2*$pi) :
+  kind==1 ? v=1-4*abs(t-floor(t+0.5)) :
+  kind==2 ? v=(t-floor(t)<0.5?1:-1) :
+  v=held;
+  v;
+);
+
+@block
+playing = play_state==1;
+enable = slider9>=0.5;
+sync = slider3>0.5;
+beats = 4*pow(0.5,slider4-1);
+oldPhase = phase;
+sync ? (
+  phase = beat_position/beats;
+) : (
+  phase += slider1*samplesblock/srate;
+);
+phase -= floor(phase);
+sync ? (
+  wrapped = phase<oldPhase;
+) : (
+  wrapped = phase<oldPhase;
+);
+wrapped ? (
+  rng=(rng*1664525+1013904223)%4294967296;
+  held=(rng/4294967296)*2-1;
+);
+!playing ? (
+  wasPlaying=0;
+  last= -1;
+) : (
+  wasPlaying=1;
+  enable ? (
+    v=shapeValue(slider2,phase);
+    cc=floor(slider7+slider8*0.01*63.5*v+0.5);
+    cc<0 ? cc=0;
+    cc>127 ? cc=127;
+    cc!=last ? (
+      midisend(0,0xB0+(slider5-1),slider6,cc);
+      last=cc;
+    );
+  );
+);

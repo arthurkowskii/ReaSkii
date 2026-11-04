@@ -1,0 +1,43 @@
+REFERENCE_PARITY	NOT_MEASURED
+SHA256	/home/randomaccessmemories/.hermes/cache/scratch/lua54_run.py	7fdf3ef961c2bfe01847aae3a0e8d7a381878b2785cb49fce21ea120aa99c48b
+SHA256	effects/ReaSkii/ReaSkii MIDI LFO.jsfx	96f8ec5834e9d36656c5487527f3cf673da3a2b73bfbb8df6eda397576a9940a
+SHA256	scripts/device/ReaSkii_DeviceRack.lua	c31e8d31b5e6bbd541e4149899f6ada8a6600e28d32743f131565042f9c01986
+SHA256	scripts/device/ReaSkii_DeviceRackController.lua	244089506ce8774c7d9c6003552c0bde47a797bc34feae97f1bbcff1154664a8
+SHA256	scripts/device/ReaSkii_DeviceRackModel.lua	6c9ca8093f33cd49abda7e73bccbb4b63a863f408b7369699c07f5cd2b15d490
+SHA256	scripts/device/ReaSkii_DeviceRackStore.lua	1c14618651ba38d7c5c8c4a933e62cb0e91b25ff157d45de892365d973370f63
+SHA256	scripts/device/ReaSkii_DeviceRackUI.lua	74bb285e57fa088938d0b09c2d0b12bd983399d8faba1c51488e13751cfac198
+SHA256	tests/device_rack_controller.lua	560353c3a741a4dc6efae68beae6459dee9097c814f908f92a1f971f1cec3d8f
+SHA256	tests/device_rack_store.lua	27690ceba4d24828ca3da307f996e9f3d91cf7a5d09b73fce33b000f6a8706ed
+SHA256	tests/device_rack_ui.lua	acc56d54f911791ac4bb02b23af611944741abd78bb69e91e58ea92c64ffb7a2
+SHA256	tests/device_rack_unit.lua	95206601c85793f905a18174c5afbe75f517f0edd3361efed411cf229560f331
+SHA256	tests/run_device_rack_unit.py	3e1161b23fecdef4e0f9a58f99050e87323b46be17c31b4dc073e2c78f74f181
+SUITE	device_rack_unit.lua
+PASS	round-trip preserves order, labels and kinds
+PASS	labels escape tabs, newlines, backslashes and unicode
+PASS	decode refuses bad version, malformed bounds and duplicate params
+PASS	add refuses duplicate, remove and move keep a new ordered list
+PASS	unknown kinds normalise to slider; invalid labels sanitise
+PASS	slider x mapping clamps and supports inverted range
+PASS	empty and whitespace configuration decode empty without error
+DONE	7
+SUITE	device_rack_store.lua
+PASS	save and load per track and FX GUID
+PASS	rename and FX reorder keep configuration through GUIDs
+PASS	save verifies byte-exact readback and rejects disappearing state
+PASS	empty or corrupt state loads empty with diagnostic, never writes
+DONE	4
+SUITE	device_rack_controller.lua
+PASS	refresh selects first FX and loads empty configuration
+PASS	add, reorder, remove and persist configuration in project state
+PASS	parameter writes go to the selected FX and follow formatted value
+PASS	track change never writes to the previous track
+PASS	bypass uses one named undo bracket per change
+PASS	insert LFO uses undo, selects new device and exposes params
+PASS	missing track refuses edits and reports status
+DONE	7
+SUITE	device_rack_ui.lua
+PASS	draw renders device chain and configuration actions
+PASS	Configure click reveals parameter browser and adds a control
+PASS	Done returns to preview and drag writes real normalized value
+PASS	wheel over slider changes value and toggle cell writes binary
+DONE	4

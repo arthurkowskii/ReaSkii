@@ -1,0 +1,16 @@
+META	scripts/midi/ReaSkii_MIDI_Core.lua	d3321c063390d54fcacfd0eaa5c67f21876d26bb83cd77615e32fdf34dc880fb
+META	scripts/midi/ReaSkii_MIDI_Tools.lua	d6f010cdd451dde4f603cbe21fbd4a9f5a9529f58bfe762884f3e0b6b2a8f655
+META	tests/midi_panel_gui.lua	491cd1c778b25ecce8e0fb2276943b1485bf1ec2db853bd2594ff990c3e9a75f
+META	tests/run_midi_panel_gui.py	9d852f5d8680a57f6eaee9dc624b2edca6d2af68279f5c4e550e13bbd4701e6c
+PASS	native fixture starts at C4
+PASS	real click +1 previews C#4 in native MIDI take
+PASS	second +1 previews D4 from original snapshot
+PASS	Cancel button restores C4
+PASS	new preview starts from restored original
+PASS	Apply keeps C#4
+PASS	preview after Apply uses new committed baseline
+PASS	ESC is neutralised while a preview is pending
+PASS	Cancel button restores C#4 after ESC guard
+PASS	panel closes without replacing native MIDI editor
+PASS	clean cancel removes its recovery file
+DONE	11

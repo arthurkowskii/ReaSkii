@@ -1,0 +1,48 @@
+META	scripts/midi/ReaSkii_MIDI_MPEAdapter.lua	cb3e4fa61721c2538c87fe17c14d118cc712191ea45d64cd7242a6fc360f52fe
+META	scripts/midi/ReaSkii_MIDI_Expression.lua	61e4a7f6b369c0fccf4f48d288dcf945104ee514e063165928f54e425bf319a2
+META	scripts/midi/ReaSkii_MIDI_Core.lua	d3321c063390d54fcacfd0eaa5c67f21876d26bb83cd77615e32fdf34dc880fb
+META	tests/midi_expression_unit.lua	1434ba895bd0f67965d6b82c933d001bba3bd2aa93ab732d9ffe1a7e64bc3451
+META	tests/midi_mpe_integration_unit.lua	dceb5c6d42dea462deb87dcf091554f73d31c773dd49886f1efe4e3622f25ee3
+META	tests/midi_mpe_integration_native.lua	6818374e2390a7e30c6e94838fa2d7684e6b09263b959639a0b6bfc7ee3ffbb9
+META	tests/run_midi_mpe_integration.py	4206595eb9e1f1fe78822e6a0b4e316ab019803599561ec79217e4869871dfb0
+META	docs/MIDI-MPE-INTEGRATION.md	94c680f578325f1b9aeb18d13a3d7406d14621fa7cc31d6430e23abf38cf8882
+COMMAND	["python3", "/home/randomaccessmemories/.hermes/cache/scratch/lua54_run.py", "/home/randomaccessmemories/GIT/ReaSkii/tests/midi_expression_unit.lua"]
+INFO	midi_expression_unit.lua	ASSERTIONS=93
+COMMAND	["python3", "/home/randomaccessmemories/.hermes/cache/scratch/lua54_run.py", "/home/randomaccessmemories/GIT/ReaSkii/tests/midi_mpe_integration_unit.lua"]
+INFO	midi_mpe_integration_unit.lua	ASSERTIONS=118
+COMMAND	["xvfb-run", "-a", "-s", "-screen 0 1024x768x24", "/home/randomaccessmemories/.hermes/cache/scratch/reaskii-native/reaper_linux_x86_64/REAPER/reaper", "-newinst", "-nosplash", "-cfgfile", "/home/randomaccessmemories/.hermes/cache/scratch/reaskii-native-mpe-integration-_h6j_24l/reaper.ini", "/home/randomaccessmemories/.hermes/cache/scratch/reaskii-native-mpe-integration-_h6j_24l/run.lua"]
+INFO	fixture exact initial readback=false; terminal=3 bytes at 7680
+PASS	native take GUID lookup available
+PASS	pure adapter computes native terminal input
+PASS	actual native raw MPE write reads back byte-exact
+PASS	native terminal CC123 source boundary retained
+PASS	direct fixture restoration exact
+INFO	Core preview=true; nil
+PASS	Core safe session previews native MPE take exactly
+PASS	safe preview recalculates from original
+PASS	safe cancel restores raw take exactly
+PASS	native MPE apply succeeds
+PASS	native MPE named undo point
+PASS	native MPE undo restores original raw take
+PASS	successful native session clears recovery journal
+PASS	slide native raw write exact
+PASS	slide raw restoration exact
+PASS	pressure native raw write exact
+PASS	pressure raw restoration exact
+INFO	fixture exact initial readback=false; terminal=3 bytes at 7680
+PASS	native same-channel polyphony refused
+PASS	overlap refusal makes no partial take write
+PASS	overlap refusal creates no recovery journal
+INFO	fixture exact initial readback=false; terminal=3 bytes at 7680
+PASS	native invalid dimension refused
+PASS	native invalid config no partial write dimension
+PASS	native invalid pitchbend_range refused
+PASS	native invalid config no partial write pitchbend_range
+PASS	native invalid mpe refused
+PASS	native invalid config no partial write mpe
+PASS	native invalid samples refused
+PASS	native invalid config no partial write samples
+PASS	native Glissando safe preview exact
+PASS	native Glissando cancel exact
+DONE	29
+WORK	/home/randomaccessmemories/.hermes/cache/scratch/reaskii-native-mpe-integration-_h6j_24l

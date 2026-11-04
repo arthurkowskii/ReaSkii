@@ -69,6 +69,7 @@ Fichiers installés :
 - `Scripts/ReaSkii/ReaSkii_RegisterTools.lua`
 - `Scripts/ReaSkii/midi/*.lua` (panneau MIDI et ses modules)
 - `Scripts/ReaSkii/device/*.lua` (device rack et ses modules)
+- `Effects/ReaSkii/ReaSkii MIDI LFO.jsfx` (LFO MIDI inséré par le device rack)
 
 Le dossier `Cockos` est imposé par REAPER pour `adjuster_script` ; ces scripts ne sont pas des produits Cockos. En installation manuelle, copier **tout l'arbre**, pas seulement le thème, puis suivre les étapes 3 et 4.
 

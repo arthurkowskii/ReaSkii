@@ -25,7 +25,8 @@ $specs = @(
     @{Key='ReaSkii_Adjuster.lua';      Folder='Scripts\Cockos';  Repo='scripts'},
     @{Key='ReaSkii_Defaults.lua';      Folder='Scripts\Cockos';  Repo='scripts'},
     @{Key='ReaSkii_ApplyDefaults.lua'; Folder='Scripts\Cockos';  Repo='scripts'},
-    @{Key='ReaSkii_RegisterTools.lua'; Folder='Scripts\ReaSkii'; Repo='scripts'}
+    @{Key='ReaSkii_RegisterTools.lua'; Folder='Scripts\ReaSkii'; Repo='scripts'},
+    @{Key='effects/ReaSkii/ReaSkii MIDI LFO.jsfx'; Folder='Effects\ReaSkii'; Repo=$null}
 )
 foreach ($group in @('midi', 'device')) {
     $folder = Join-Path (Join-Path $root 'scripts') $group
