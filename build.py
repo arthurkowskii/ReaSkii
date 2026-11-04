@@ -8,7 +8,10 @@ from src.engine import make_rules
 from src.skin_assets import write_assets
 
 ROOT = Path(__file__).resolve().parent
-VERSION = '0.2.0'
+VERSION = '0.3.0'
+THEME_VERSION = '0.2.0'
+# Installed below Scripts/ReaSkii/, one subdirectory per tool family.
+TOOL_GROUPS = ('midi', 'device')
 
 
 def write_zip(path, payload):
@@ -34,9 +37,17 @@ def build():
     payload = {'ReaSkii.ReaperThemeZip': target.read_bytes()}
     for name in ('ReaSkii_Adjuster.lua', 'ReaSkii_Defaults.lua', 'ReaSkii_ApplyDefaults.lua'):
         payload[name] = (ROOT / 'scripts' / name).read_bytes()
-    for name in ('Install-ReaSkii.ps1', 'README.md', 'THIRD_PARTY_NOTICES.md'):
+    payload['ReaSkii_RegisterTools.lua'] = (ROOT / 'scripts/ReaSkii_RegisterTools.lua').read_bytes()
+    for group in TOOL_GROUPS:
+        sources = sorted((ROOT / 'scripts' / group).glob('*.lua'))
+        if not sources:
+            raise ValueError(f'No tool script found in scripts/{group}')
+        for source in sources:
+            payload[f'scripts/{group}/{source.name}'] = source.read_bytes()
+    for name in ('Install-ReaSkii.ps1', 'Get-ReaSkii.ps1', 'README.md', 'THIRD_PARTY_NOTICES.md'):
         payload[name] = (ROOT / name).read_bytes()
-    manifest = {'version': VERSION, 'engine': 'Reapertips v1.95a Dark', 'artwork': 'reARK X',
+    manifest = {'version': VERSION, 'theme_version': THEME_VERSION,
+                'engine': 'Reapertips v1.95a Dark', 'artwork': 'reARK X',
                 'sha256': {name: hashlib.sha256(data).hexdigest() for name, data in payload.items()}}
     payload['manifest.json'] = (json.dumps(manifest, indent=2, sort_keys=True) + '\n').encode()
     write_zip(ROOT / f'dist/ReaSkii-v{VERSION}.zip', payload)

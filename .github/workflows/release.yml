@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check the tag matches the build version
+        run: |
+          python3 -c "import os,sys,build; tag=os.environ['GITHUB_REF_NAME'].lstrip('v'); sys.exit(0 if tag==build.VERSION else f'tag {tag} != build.VERSION {build.VERSION}')"
+      - name: Build reproducible package
+        run: python3 build.py
+      - name: Contract and upstream asset checks
+        run: python3 -m unittest discover -s tests -v
+      - name: Exercise installer in isolated sandbox
+        shell: pwsh
+        run: ./tests/test_installer.ps1 -Sandbox (Join-Path $env:RUNNER_TEMP 'reaskii-installer-qa')
+      - name: Exercise bootstrap in isolated sandbox
+        shell: pwsh
+        run: ./tests/test_bootstrap.ps1 -Sandbox (Join-Path $env:RUNNER_TEMP 'reaskii-installer-qa')
+      - name: Publish release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          VERSION="${GITHUB_REF_NAME#v}"
+          test -f "dist/ReaSkii-v${VERSION}.zip"
+          cp "dist/ReaSkii-v${VERSION}.zip" dist/ReaSkii.zip
+          gh release create "$GITHUB_REF_NAME" \
+            "dist/ReaSkii.zip" \
+            "dist/ReaSkii-v${VERSION}.zip" \
+            --title "ReaSkii ${VERSION}" \
+            --notes "Installateur Windows, thème et outils. Manifeste SHA-256 inclus. Mise à jour en une commande, REAPER fermé : irm https://raw.githubusercontent.com/arthurkowskii/ReaSkii/main/Get-ReaSkii.ps1 | iex"

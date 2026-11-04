@@ -8,22 +8,52 @@ if (-not (Test-Path -LiteralPath (Join-Path $ResourcePath 'reaper.ini') -PathTyp
     throw 'REAPER resource directory not found. Pass -ResourcePath explicitly.'
 }
 if (Get-Process -Name reaper -ErrorAction SilentlyContinue) { throw 'Close REAPER before installing or updating ReaSkii.' }
-$files = @()
-foreach ($name in @('ReaSkii.ReaperThemeZip','ReaSkii_Adjuster.lua','ReaSkii_Defaults.lua','ReaSkii_ApplyDefaults.lua')) {
-    $source = Join-Path $root $name
-    if (-not (Test-Path -LiteralPath $source -PathType Leaf)) {
-        $source = Join-Path (Join-Path $root $(if ($name -like '*.lua') {'scripts'} else {'dist'})) $name
-    }
-    $folder = if ($name -like '*.lua') {'Scripts\Cockos'} else {'ColorThemes'}
-    $files += @{Source=$source; Target=(Join-Path (Join-Path $ResourcePath $folder) $name); Name=$name; Changed=$false; Existed=$false}
-}
-# Preflight the entire payload before modifying anything.
+
+# A repository checkout is not a package: dist/ is not versioned, so nothing is built yet.
 $manifestPath = Join-Path $root 'manifest.json'
-$manifest = if (Test-Path -LiteralPath $manifestPath) { Get-Content -Raw -LiteralPath $manifestPath | ConvertFrom-Json } else { $null }
+$manifest = if (Test-Path -LiteralPath $manifestPath -PathType Leaf) { Get-Content -Raw -LiteralPath $manifestPath | ConvertFrom-Json } else { $null }
+if ($null -eq $manifest -and (Test-Path -LiteralPath (Join-Path $root 'build.py') -PathType Leaf) -and
+    -not (Test-Path -LiteralPath (Join-Path $root 'dist/ReaSkii.ReaperThemeZip') -PathType Leaf)) {
+    throw "Ce dossier est un clone du dépôt sans paquet construit (dist/ n'est pas versionné). Lance 'python3 build.py', ou utilise le zip de la release."
+}
+
+# Key = package-relative path, which is also its key in manifest.json.
+# Folder = destination under the REAPER resource directory.
+# Repo = where to look when running from a repository checkout instead of the package.
+$specs = @(
+    @{Key='ReaSkii.ReaperThemeZip';    Folder='ColorThemes';     Repo='dist'},
+    @{Key='ReaSkii_Adjuster.lua';      Folder='Scripts\Cockos';  Repo='scripts'},
+    @{Key='ReaSkii_Defaults.lua';      Folder='Scripts\Cockos';  Repo='scripts'},
+    @{Key='ReaSkii_ApplyDefaults.lua'; Folder='Scripts\Cockos';  Repo='scripts'},
+    @{Key='ReaSkii_RegisterTools.lua'; Folder='Scripts\ReaSkii'; Repo='scripts'}
+)
+foreach ($group in @('midi', 'device')) {
+    $folder = Join-Path (Join-Path $root 'scripts') $group
+    if (-not (Test-Path -LiteralPath $folder -PathType Container)) { throw "Missing package folder: scripts/$group" }
+    foreach ($file in @(Get-ChildItem -LiteralPath $folder -Filter '*.lua' -File | Sort-Object Name)) {
+        $specs += @{Key="scripts/$group/$($file.Name)"; Folder="Scripts\ReaSkii\$group"; Repo=$null}
+    }
+}
+$files = @()
+foreach ($spec in $specs) {
+    $leaf = Split-Path -Leaf $spec.Key
+    $source = Join-Path $root $spec.Key
+    if (-not (Test-Path -LiteralPath $source -PathType Leaf)) {
+        if (-not $spec.Repo) { throw "Missing package file: $($spec.Key)" }
+        $source = Join-Path (Join-Path $root $spec.Repo) $leaf
+    }
+    $files += @{Source=$source; Target=(Join-Path (Join-Path $ResourcePath $spec.Folder) $leaf); Key=$spec.Key; Changed=$false; Existed=$false}
+}
+
+# Preflight the entire payload before modifying anything.
 foreach ($f in $files) {
     if (-not (Test-Path -LiteralPath $f.Source -PathType Leaf)) { throw "Missing package file: $($f.Source)" }
     $f.Hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $f.Source).Hash
-    if ($null -ne $manifest -and $manifest.sha256.($f.Name) -ne $f.Hash.ToLowerInvariant()) { throw "Package hash mismatch: $($f.Name)" }
+    if ($null -ne $manifest) {
+        $entry = $manifest.sha256.PSObject.Properties[$f.Key]
+        if ($null -eq $entry) { throw "Package file not listed in the manifest: $($f.Key)" }
+        if ($entry.Value -ne $f.Hash.ToLowerInvariant()) { throw "Package hash mismatch: $($f.Key)" }
+    }
     if ((Test-Path -LiteralPath $f.Target) -and -not (Test-Path -LiteralPath $f.Target -PathType Leaf)) { throw "Destination is not a file: $($f.Target)" }
     $f.Existed = Test-Path -LiteralPath $f.Target -PathType Leaf
     $f.Changed = (-not $f.Existed) -or (Get-FileHash -Algorithm SHA256 -LiteralPath $f.Target).Hash -ne $f.Hash
@@ -35,7 +65,7 @@ if ($changed.Count) {
     New-Item -ItemType Directory -Path $backup -Force | Out-Null
     foreach ($f in $changed) {
         if ($f.Existed) {
-            $f.Backup = Join-Path $backup $f.Name
+            $f.Backup = Join-Path $backup (Split-Path -Leaf $f.Key)
             [IO.File]::Copy($f.Target, $f.Backup, $false)
             if ((Get-FileHash -Algorithm SHA256 -LiteralPath $f.Backup).Hash -ne (Get-FileHash -Algorithm SHA256 -LiteralPath $f.Target).Hash) { throw "Backup mismatch: $($f.Target)" }
         }
@@ -61,5 +91,7 @@ if ($changed.Count) {
     Write-Output "Backup: $backup"
 }
 foreach ($f in $files) { [pscustomobject]@{Path=$f.Target; SHA256=(Get-FileHash -Algorithm SHA256 -LiteralPath $f.Target).Hash} }
+Write-Output ("Installed {0} file(s), {1} updated." -f $files.Count, $changed.Count)
 Write-Output 'Installed without activating the theme. Select Options > Themes > ReaSkii, then open Theme adjuster.'
+Write-Output 'Tools: run Scripts\ReaSkii\ReaSkii_RegisterTools.lua once from the Action List to declare the MIDI Panel and Device Rack actions.'
 Write-Output 'The adjuster applies new defaults once, with another restore backup. No project or original reARK/Reapertips theme was modified.'
