@@ -38,10 +38,21 @@ jobs:
           test -f "dist/ReaSkii-Tools-v${VERSION}.zip"
           cp "dist/ReaSkii-v${VERSION}.zip" dist/ReaSkii.zip
           cp "dist/ReaSkii-Tools-v${VERSION}.zip" dist/ReaSkiiTools.zip
-          gh release create "$GITHUB_REF_NAME" \
-            "dist/ReaSkii.zip" \
-            "dist/ReaSkii-v${VERSION}.zip" \
-            "dist/ReaSkiiTools.zip" \
-            "dist/ReaSkii-Tools-v${VERSION}.zip" \
-            --title "ReaSkii ${VERSION}" \
-            --notes "Deux paquets. Complet, thème et outils : irm https://raw.githubusercontent.com/arthurkowskii/ReaSkii/main/Get-ReaSkii.ps1 | iex. Outils seuls, sans thème ni ajusteur : irm https://raw.githubusercontent.com/arthurkowskii/ReaSkii/main/Get-ReaSkiiTools.ps1 | iex. REAPER fermé. Manifeste SHA-256 inclus."
+          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 && EXISTS=1 || EXISTS=0
+          if [ "$EXISTS" = "1" ]; then
+            # Re-running the job must not fail on an existing release: refresh the assets instead.
+            gh release upload "$GITHUB_REF_NAME" \
+              "dist/ReaSkii.zip" \
+              "dist/ReaSkii-v${VERSION}.zip" \
+              "dist/ReaSkiiTools.zip" \
+              "dist/ReaSkii-Tools-v${VERSION}.zip" \
+              --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" \
+              "dist/ReaSkii.zip" \
+              "dist/ReaSkii-v${VERSION}.zip" \
+              "dist/ReaSkiiTools.zip" \
+              "dist/ReaSkii-Tools-v${VERSION}.zip" \
+              --title "ReaSkii ${VERSION}" \
+              --notes "Deux paquets. Complet, thème et outils : irm https://raw.githubusercontent.com/arthurkowskii/ReaSkii/main/Get-ReaSkii.ps1 | iex. Outils seuls, sans thème ni ajusteur : irm https://raw.githubusercontent.com/arthurkowskii/ReaSkii/main/Get-ReaSkiiTools.ps1 | iex. REAPER fermé. Manifeste SHA-256 inclus."
+          fi
